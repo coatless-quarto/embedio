@@ -1,0 +1,31 @@
+on:
+    push:
+      branches: [main, master]
+    release:
+        types: [published]
+    workflow_dispatch: {}
+      
+name: demo-website
+
+jobs:
+    demo-page:
+        runs-on: ubuntu-latest
+        # Only restrict concurrency for non-PR jobs
+        concurrency:
+          group: quarto-publish-${{ github.event_name != 'pull_request' || github.run_id }}
+        permissions:
+          contents: write
+        steps:
+        - name: "Check out repository"
+          uses: actions/checkout@v4
+
+        - name: "Set up Quarto"
+          uses: quarto-dev/quarto-actions/setup@v2
+          with:
+            version: "pre-release"
+
+        - name: Publish to GitHub Pages (and render)
+          uses: quarto-dev/quarto-actions/publish@v2
+          with:
+              target: gh-pages
+              path: docs
