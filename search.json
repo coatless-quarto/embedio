@@ -1,35 +1,23 @@
 [
   {
-    "objectID": "qembedio-release-notes.html",
-    "href": "qembedio-release-notes.html",
-    "title": "Release Notes",
-    "section": "",
-    "text": "embed shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\nembed-pdf: Include a PDF\nembed-slides: Include HTML based slides",
-    "crumbs": [
-      "Extra",
-      "Release Notes"
-    ]
-  },
-  {
-    "objectID": "qembedio-release-notes.html#features",
-    "href": "qembedio-release-notes.html#features",
-    "title": "Release Notes",
-    "section": "",
-    "text": "embed shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\nembed-pdf: Include a PDF\nembed-slides: Include HTML based slides",
-    "crumbs": [
-      "Extra",
-      "Release Notes"
-    ]
-  },
-  {
     "objectID": "qembedio-embed-pdf.html",
     "href": "qembedio-embed-pdf.html",
     "title": "Embed PDF",
     "section": "",
-    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, we can show the test.pdf with:\n{{&lt; pdf file=\"assets/test.pdf\" &gt;}}",
+    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, we can show the test.pdf with:\n{{&lt; pdf \"assets/test.pdf\" &gt;}}",
     "crumbs": [
       "Demos",
       "PDF"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "The embedio shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto’s shortcode mechanism.",
+    "crumbs": [
+      "Home"
     ]
   },
   {
@@ -132,13 +120,25 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "qembedio-release-notes.html",
+    "href": "qembedio-release-notes.html",
+    "title": "Release Notes",
     "section": "",
-    "text": "The embedio shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto’s shortcode mechanism.",
+    "text": "embed shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\nembed-pdf: Include a PDF\nembed-slides: Include HTML based slides",
     "crumbs": [
-      "Home"
+      "Extra",
+      "Release Notes"
+    ]
+  },
+  {
+    "objectID": "qembedio-release-notes.html#features",
+    "href": "qembedio-release-notes.html#features",
+    "title": "Release Notes",
+    "section": "",
+    "text": "embed shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\nembed-pdf: Include a PDF\nembed-slides: Include HTML based slides",
+    "crumbs": [
+      "Extra",
+      "Release Notes"
     ]
   }
 ]
