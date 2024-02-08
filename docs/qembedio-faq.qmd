@@ -1,0 +1,70 @@
+---
+title: "Frequently Asked Questions"
+date: "02-06-2024"
+date-modified: last-modified
+engine: markdown
+format: 
+  html:
+    toc: true
+---
+
+# General Information
+
+## What is the embedio shortcode extension for Quarto?
+
+The `embedio` short code extension for Quarto is a tool designed to improve the embedding experience of various file types within various Quarto HTML formats. It focuses on seamlessly integrating HTML slides, PDFs, audio files, and more, providing users with a versatile and enriched content embedding experience.
+
+# Installation
+
+## How do I install the embedio shortcode Extension?
+
+See the [home page](index.qmd) for details. 
+
+## Is the embedio shortcode extension compatible with all Quarto versions?
+
+The `embedio` short code extension requires Quarto v1.4.549 or later.
+
+# Supported File Types
+
+## What file types does the embed shortcode extension for Quarto support for embedding?
+
+The embed shortcode extension for Quarto supports a wide range of file types, including but not limited to HTML slides, PDFs, audio files, and more. Refer to the documentation for a comprehensive list of supported file types.
+
+## Can I embed interactive content with the embed shortcode extension for Quarto?
+
+Yes, the embed shortcode extension for Quarto enables the embedding of interactive content, such as HTML slides with dynamic elements. Explore the documentation for details on incorporating interactive features into your embedded content.
+
+# Usage and Customization:
+
+## How do I embed an HTML slide using the embedio shortcode extension for Quarto?
+
+Embedding an HTML slide is straightforward. Please use:
+
+```{=markdown}
+{{< embed-slides file="path-to-slides" >}}
+```
+
+
+# Troubleshooting
+
+## I'm encountering issues with embedding files. What should I do?
+
+If you're experiencing difficulties with file embedding, first ensure that your Quarto project has the `embedio` shortcode extension installed by looking in the `_extensions` folder. 
+
+Next, make sure that the resource is specified in the `resources` key under the publishing format: 
+
+```yaml
+---
+title: Example resource inclusion
+format:
+  html: 
+    resources: 
+    - path/to/file.pdf
+---
+```
+
+## Are there known compatibility issues with certain browsers?
+
+The are no known compatible with major browsers. However, if you encounter issues, please feel free to raise them in the project's issue tracker and consider updating your browser to the latest version.
+
+For additional support, bug reports, or feature requests, please visit the embed shortcode extension for Quarto community forum or contact our support team through the official channels outlined in the documentation.

@@ -1,6 +1,5 @@
 return {
-
-    ["embed-pdf"] = function(args, kwargs, meta)
+    ["pdf"] = function(args, kwargs, meta)
 
       -- Supported options for now
       local pdf_file_name = pandoc.utils.stringify(kwargs["file"])

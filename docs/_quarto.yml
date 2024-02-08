@@ -1,0 +1,34 @@
+project:
+  type: website
+
+website:
+  title: "embedio"
+  reader-mode: true
+  repo-url: https://github.com/coatless-quarto/embedio/
+  repo-actions: [edit, issue]
+  sidebar:
+    style: "floating"
+    search: true
+    tools:
+      - icon: github
+        href: https://github.com/coatless-quarto/embedio/
+    contents: 
+      - text: "Home"
+        file: index.qmd
+      - section: "Demos"
+        contents:
+        - text: "PDF"
+          href: qembedio-embed-pdf.qmd
+        - text: "HTML"
+        - text: "Audio"
+        - text: "Maps"
+        - text: "Social"
+      - section: "Support"
+        contents:
+        - text: "FAQ"
+          href: qembedio-faq.qmd
+        - text: "Submit an issue"
+          href: https://github.com/coatless-quarto/embedio/issues/new/choose
+      - section: "Extra"
+        contents:
+        - qembedio-release-notes.qmd

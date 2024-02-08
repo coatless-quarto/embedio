@@ -1,0 +1,18 @@
+---
+title: "Release Notes"
+date: "02-07-2024"
+date-modified: last-modified
+engine: markdown
+format: 
+  html:
+    toc: true
+---
+
+
+# 0.0.0-dev.1: ??? (??-??-??) [DEV]
+
+## Features
+
+- `embed` shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.
+  - `embed-pdf`: Include a PDF
+  - `embed-slides`: Include HTML based slides
