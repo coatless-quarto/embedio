@@ -1,0 +1,144 @@
+[
+  {
+    "objectID": "qembedio-release-notes.html",
+    "href": "qembedio-release-notes.html",
+    "title": "Release Notes",
+    "section": "",
+    "text": "embed shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\nembed-pdf: Include a PDF\nembed-slides: Include HTML based slides",
+    "crumbs": [
+      "Extra",
+      "Release Notes"
+    ]
+  },
+  {
+    "objectID": "qembedio-release-notes.html#features",
+    "href": "qembedio-release-notes.html#features",
+    "title": "Release Notes",
+    "section": "",
+    "text": "embed shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\nembed-pdf: Include a PDF\nembed-slides: Include HTML based slides",
+    "crumbs": [
+      "Extra",
+      "Release Notes"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-pdf.html",
+    "href": "qembedio-embed-pdf.html",
+    "title": "Embed PDF",
+    "section": "",
+    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, we can show the test.pdf with:\n{{&lt; pdf file=\"assets/test.pdf\" &gt;}}",
+    "crumbs": [
+      "Demos",
+      "PDF"
+    ]
+  },
+  {
+    "objectID": "qembedio-faq.html",
+    "href": "qembedio-faq.html",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "The embedio short code extension for Quarto is a tool designed to improve the embedding experience of various file types within various Quarto HTML formats. It focuses on seamlessly integrating HTML slides, PDFs, audio files, and more, providing users with a versatile and enriched content embedding experience.",
+    "crumbs": [
+      "Support",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "qembedio-faq.html#what-is-the-embedio-shortcode-extension-for-quarto",
+    "href": "qembedio-faq.html#what-is-the-embedio-shortcode-extension-for-quarto",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "The embedio short code extension for Quarto is a tool designed to improve the embedding experience of various file types within various Quarto HTML formats. It focuses on seamlessly integrating HTML slides, PDFs, audio files, and more, providing users with a versatile and enriched content embedding experience.",
+    "crumbs": [
+      "Support",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "qembedio-faq.html#how-do-i-install-the-embedio-shortcode-extension",
+    "href": "qembedio-faq.html#how-do-i-install-the-embedio-shortcode-extension",
+    "title": "Frequently Asked Questions",
+    "section": "How do I install the embedio shortcode Extension?",
+    "text": "How do I install the embedio shortcode Extension?\nSee the home page for details.",
+    "crumbs": [
+      "Support",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "qembedio-faq.html#is-the-embedio-shortcode-extension-compatible-with-all-quarto-versions",
+    "href": "qembedio-faq.html#is-the-embedio-shortcode-extension-compatible-with-all-quarto-versions",
+    "title": "Frequently Asked Questions",
+    "section": "Is the embedio shortcode extension compatible with all Quarto versions?",
+    "text": "Is the embedio shortcode extension compatible with all Quarto versions?\nThe embedio short code extension requires Quarto v1.4.549 or later.",
+    "crumbs": [
+      "Support",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "qembedio-faq.html#what-file-types-does-the-embed-shortcode-extension-for-quarto-support-for-embedding",
+    "href": "qembedio-faq.html#what-file-types-does-the-embed-shortcode-extension-for-quarto-support-for-embedding",
+    "title": "Frequently Asked Questions",
+    "section": "What file types does the embed shortcode extension for Quarto support for embedding?",
+    "text": "What file types does the embed shortcode extension for Quarto support for embedding?\nThe embed shortcode extension for Quarto supports a wide range of file types, including but not limited to HTML slides, PDFs, audio files, and more. Refer to the documentation for a comprehensive list of supported file types.",
+    "crumbs": [
+      "Support",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "qembedio-faq.html#can-i-embed-interactive-content-with-the-embed-shortcode-extension-for-quarto",
+    "href": "qembedio-faq.html#can-i-embed-interactive-content-with-the-embed-shortcode-extension-for-quarto",
+    "title": "Frequently Asked Questions",
+    "section": "Can I embed interactive content with the embed shortcode extension for Quarto?",
+    "text": "Can I embed interactive content with the embed shortcode extension for Quarto?\nYes, the embed shortcode extension for Quarto enables the embedding of interactive content, such as HTML slides with dynamic elements. Explore the documentation for details on incorporating interactive features into your embedded content.",
+    "crumbs": [
+      "Support",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "qembedio-faq.html#how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto",
+    "href": "qembedio-faq.html#how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto",
+    "title": "Frequently Asked Questions",
+    "section": "How do I embed an HTML slide using the embedio shortcode extension for Quarto?",
+    "text": "How do I embed an HTML slide using the embedio shortcode extension for Quarto?\nEmbedding an HTML slide is straightforward. Please use:",
+    "crumbs": [
+      "Support",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "qembedio-faq.html#im-encountering-issues-with-embedding-files.-what-should-i-do",
+    "href": "qembedio-faq.html#im-encountering-issues-with-embedding-files.-what-should-i-do",
+    "title": "Frequently Asked Questions",
+    "section": "I’m encountering issues with embedding files. What should I do?",
+    "text": "I’m encountering issues with embedding files. What should I do?\nIf you’re experiencing difficulties with file embedding, first ensure that your Quarto project has the embedio shortcode extension installed by looking in the _extensions folder.\nNext, make sure that the resource is specified in the resources key under the publishing format:\n---\ntitle: Example resource inclusion\nformat:\n  html: \n    resources: \n    - path/to/file.pdf\n---",
+    "crumbs": [
+      "Support",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "qembedio-faq.html#are-there-known-compatibility-issues-with-certain-browsers",
+    "href": "qembedio-faq.html#are-there-known-compatibility-issues-with-certain-browsers",
+    "title": "Frequently Asked Questions",
+    "section": "Are there known compatibility issues with certain browsers?",
+    "text": "Are there known compatibility issues with certain browsers?\nThe are no known compatible with major browsers. However, if you encounter issues, please feel free to raise them in the project’s issue tracker and consider updating your browser to the latest version.\nFor additional support, bug reports, or feature requests, please visit the embed shortcode extension for Quarto community forum or contact our support team through the official channels outlined in the documentation.",
+    "crumbs": [
+      "Support",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "The embedio shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto’s shortcode mechanism.",
+    "crumbs": [
+      "Home"
+    ]
+  }
+]
