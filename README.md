@@ -1,10 +1,6 @@
-# Quarto Extension Development with Lua in a Devcontainer
+# embedio Embedding Shortcode Extension for Quarto HTML Documents
 
-The `embedio` shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto's shortcode mechanism.
-
-You can try out the Codespace by clicking on the following button:
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/coatless-quarto/embedio?quickstart=1)
+The `embedio` shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto's shortcode mechanism. The shortcodes expand out to be valid HTML.
 
 ## Installation
 
