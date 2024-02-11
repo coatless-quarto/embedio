@@ -4,7 +4,7 @@
     "href": "qembedio-embed-pdf.html",
     "title": "Embed PDF",
     "section": "",
-    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, we can show the test.pdf with:\n{{&lt; pdf \"assets/test.pdf\" &gt;}}",
+    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\n{{&lt; pdf file=\"assets/test.pdf\" &gt;}}\nFor example, we can show the test.pdf with:\n  \n    Unable to display PDF file. Download instead.",
     "crumbs": [
       "Demos",
       "PDF"
@@ -18,6 +18,17 @@
     "text": "The embedio shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto’s shortcode mechanism.",
     "crumbs": [
       "Home"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-revealjs.html",
+    "href": "qembedio-embed-revealjs.html",
+    "title": "Embed RevealJS Slides",
+    "section": "",
+    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for HTML websites. You can use it with:\n{{&lt; revealjs file=\"assets/slides-reveal.html\" &gt;}}\nFor example, we can show the slides-reveal.html with:",
+    "crumbs": [
+      "Demos",
+      "RevealJS"
     ]
   },
   {
@@ -124,7 +135,7 @@
     "href": "qembedio-release-notes.html",
     "title": "Release Notes",
     "section": "",
-    "text": "embed shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\nembed-pdf: Include a PDF\nembed-slides: Include HTML based slides",
+    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
     "crumbs": [
       "Extra",
       "Release Notes"
@@ -135,7 +146,7 @@
     "href": "qembedio-release-notes.html#features",
     "title": "Release Notes",
     "section": "",
-    "text": "embed shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\nembed-pdf: Include a PDF\nembed-slides: Include HTML based slides",
+    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
     "crumbs": [
       "Extra",
       "Release Notes"

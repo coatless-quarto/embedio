@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://coatless-quarto.github.io/embedio/qembedio-embed-pdf.html</loc>
-    <lastmod>2024-02-09T06:15:37.957Z</lastmod>
+    <lastmod>2024-02-11T07:10:11.931Z</lastmod>
   </url>
   <url>
     <loc>https://coatless-quarto.github.io/embedio/index.html</loc>
-    <lastmod>2024-02-09T06:15:37.957Z</lastmod>
+    <lastmod>2024-02-11T07:10:11.931Z</lastmod>
+  </url>
+  <url>
+    <loc>https://coatless-quarto.github.io/embedio/qembedio-embed-revealjs.html</loc>
+    <lastmod>2024-02-11T07:10:11.935Z</lastmod>
   </url>
   <url>
     <loc>https://coatless-quarto.github.io/embedio/qembedio-faq.html</loc>
-    <lastmod>2024-02-09T06:15:37.957Z</lastmod>
+    <lastmod>2024-02-11T07:10:11.935Z</lastmod>
   </url>
   <url>
     <loc>https://coatless-quarto.github.io/embedio/qembedio-release-notes.html</loc>
-    <lastmod>2024-02-09T06:15:37.957Z</lastmod>
+    <lastmod>2024-02-11T07:10:11.935Z</lastmod>
   </url>
 </urlset>

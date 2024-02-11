@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-02-06">
 
-<title>embedio – Frequently Asked Questions</title>
+<title>embedio – Embed RevealJS Slides</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,11 +100,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+ 
+  <style>
+  .slide-deck {
+      border: 3px solid #dee2e6;
+      width: 100%;
+  }
+  </style>
+  
 
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -114,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./qembedio-faq.html">Support</a></li><li class="breadcrumb-item"><a href="./qembedio-faq.html">FAQ</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./qembedio-embed-pdf.html">Demos</a></li><li class="breadcrumb-item"><a href="./qembedio-embed-revealjs.html">RevealJS</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -170,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qembedio-embed-revealjs.html" class="sidebar-item-text sidebar-link">
+  <a href="./qembedio-embed-revealjs.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">RevealJS</span></a>
   </div>
 </li>
@@ -199,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qembedio-faq.html" class="sidebar-item-text sidebar-link active">
+  <a href="./qembedio-faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FAQ</span></a>
   </div>
 </li>
@@ -233,43 +240,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#general-information" id="toc-general-information" class="nav-link active" data-scroll-target="#general-information">General Information</a>
-  <ul class="collapse">
-  <li><a href="#what-is-the-embedio-shortcode-extension-for-quarto" id="toc-what-is-the-embedio-shortcode-extension-for-quarto" class="nav-link" data-scroll-target="#what-is-the-embedio-shortcode-extension-for-quarto">What is the embedio shortcode extension for Quarto?</a></li>
-  </ul></li>
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
-  <ul class="collapse">
-  <li><a href="#how-do-i-install-the-embedio-shortcode-extension" id="toc-how-do-i-install-the-embedio-shortcode-extension" class="nav-link" data-scroll-target="#how-do-i-install-the-embedio-shortcode-extension">How do I install the embedio shortcode Extension?</a></li>
-  <li><a href="#is-the-embedio-shortcode-extension-compatible-with-all-quarto-versions" id="toc-is-the-embedio-shortcode-extension-compatible-with-all-quarto-versions" class="nav-link" data-scroll-target="#is-the-embedio-shortcode-extension-compatible-with-all-quarto-versions">Is the embedio shortcode extension compatible with all Quarto versions?</a></li>
-  </ul></li>
-  <li><a href="#supported-file-types" id="toc-supported-file-types" class="nav-link" data-scroll-target="#supported-file-types">Supported File Types</a>
-  <ul class="collapse">
-  <li><a href="#what-file-types-does-the-embed-shortcode-extension-for-quarto-support-for-embedding" id="toc-what-file-types-does-the-embed-shortcode-extension-for-quarto-support-for-embedding" class="nav-link" data-scroll-target="#what-file-types-does-the-embed-shortcode-extension-for-quarto-support-for-embedding">What file types does the embed shortcode extension for Quarto support for embedding?</a></li>
-  <li><a href="#can-i-embed-interactive-content-with-the-embed-shortcode-extension-for-quarto" id="toc-can-i-embed-interactive-content-with-the-embed-shortcode-extension-for-quarto" class="nav-link" data-scroll-target="#can-i-embed-interactive-content-with-the-embed-shortcode-extension-for-quarto">Can I embed interactive content with the embed shortcode extension for Quarto?</a></li>
-  </ul></li>
-  <li><a href="#usage-and-customization" id="toc-usage-and-customization" class="nav-link" data-scroll-target="#usage-and-customization">Usage and Customization:</a>
-  <ul class="collapse">
-  <li><a href="#how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto" id="toc-how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto" class="nav-link" data-scroll-target="#how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto">How do I embed an HTML slide using the embedio shortcode extension for Quarto?</a></li>
-  </ul></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a>
-  <ul class="collapse">
-  <li><a href="#im-encountering-issues-with-embedding-files.-what-should-i-do" id="toc-im-encountering-issues-with-embedding-files.-what-should-i-do" class="nav-link" data-scroll-target="#im-encountering-issues-with-embedding-files.-what-should-i-do">I’m encountering issues with embedding files. What should I do?</a></li>
-  <li><a href="#are-there-known-compatibility-issues-with-certain-browsers" id="toc-are-there-known-compatibility-issues-with-certain-browsers" class="nav-link" data-scroll-target="#are-there-known-compatibility-issues-with-certain-browsers">Are there known compatibility issues with certain browsers?</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/coatless-quarto/embedio/edit/main/qembedio-faq.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/coatless-quarto/embedio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./qembedio-faq.html">Support</a></li><li class="breadcrumb-item"><a href="./qembedio-faq.html">FAQ</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./qembedio-embed-pdf.html">Demos</a></li><li class="breadcrumb-item"><a href="./qembedio-embed-revealjs.html">RevealJS</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Frequently Asked Questions</h1>
+<h1 class="title">Embed RevealJS Slides</h1>
 </div>
 
 
@@ -277,19 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">February 6, 2024</p>
-    </div>
-  </div>
   
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 11, 2024</p>
-    </div>
-  </div>
     
   </div>
   
@@ -298,64 +263,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="general-information" class="level1">
-<h1>General Information</h1>
-<section id="what-is-the-embedio-shortcode-extension-for-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-the-embedio-shortcode-extension-for-quarto">What is the embedio shortcode extension for Quarto?</h2>
-<p>The <code>embedio</code> short code extension for Quarto is a tool designed to improve the embedding experience of various file types within various Quarto HTML formats. It focuses on seamlessly integrating HTML slides, PDFs, audio files, and more, providing users with a versatile and enriched content embedding experience.</p>
-</section>
-</section>
-<section id="installation" class="level1">
-<h1>Installation</h1>
-<section id="how-do-i-install-the-embedio-shortcode-extension" class="level2">
-<h2 class="anchored" data-anchor-id="how-do-i-install-the-embedio-shortcode-extension">How do I install the embedio shortcode Extension?</h2>
-<p>See the <a href="./index.html">home page</a> for details.</p>
-</section>
-<section id="is-the-embedio-shortcode-extension-compatible-with-all-quarto-versions" class="level2">
-<h2 class="anchored" data-anchor-id="is-the-embedio-shortcode-extension-compatible-with-all-quarto-versions">Is the embedio shortcode extension compatible with all Quarto versions?</h2>
-<p>The <code>embedio</code> short code extension requires Quarto v1.4.549 or later.</p>
-</section>
-</section>
-<section id="supported-file-types" class="level1">
-<h1>Supported File Types</h1>
-<section id="what-file-types-does-the-embed-shortcode-extension-for-quarto-support-for-embedding" class="level2">
-<h2 class="anchored" data-anchor-id="what-file-types-does-the-embed-shortcode-extension-for-quarto-support-for-embedding">What file types does the embed shortcode extension for Quarto support for embedding?</h2>
-<p>The embed shortcode extension for Quarto supports a wide range of file types, including but not limited to HTML slides, PDFs, audio files, and more. Refer to the documentation for a comprehensive list of supported file types.</p>
-</section>
-<section id="can-i-embed-interactive-content-with-the-embed-shortcode-extension-for-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="can-i-embed-interactive-content-with-the-embed-shortcode-extension-for-quarto">Can I embed interactive content with the embed shortcode extension for Quarto?</h2>
-<p>Yes, the embed shortcode extension for Quarto enables the embedding of interactive content, such as HTML slides with dynamic elements. Explore the documentation for details on incorporating interactive features into your embedded content.</p>
-</section>
-</section>
-<section id="usage-and-customization" class="level1">
-<h1>Usage and Customization:</h1>
-<section id="how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto">How do I embed an HTML slide using the embedio shortcode extension for Quarto?</h2>
-<p>Embedding an HTML slide is straightforward. Please use:</p>
-</section>
-</section>
-<section id="troubleshooting" class="level1">
-<h1>Troubleshooting</h1>
-<section id="im-encountering-issues-with-embedding-files.-what-should-i-do" class="level2">
-<h2 class="anchored" data-anchor-id="im-encountering-issues-with-embedding-files.-what-should-i-do">I’m encountering issues with embedding files. What should I do?</h2>
-<p>If you’re experiencing difficulties with file embedding, first ensure that your Quarto project has the <code>embedio</code> shortcode extension installed by looking in the <code>_extensions</code> folder.</p>
-<p>Next, make sure that the resource is specified in the <code>resources</code> key under the publishing format:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Example resource inclusion</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">resources</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> path/to/file.pdf</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="are-there-known-compatibility-issues-with-certain-browsers" class="level2">
-<h2 class="anchored" data-anchor-id="are-there-known-compatibility-issues-with-certain-browsers">Are there known compatibility issues with certain browsers?</h2>
-<p>The are no known compatible with major browsers. However, if you encounter issues, please feel free to raise them in the project’s issue tracker and consider updating your browser to the latest version.</p>
-<p>For additional support, bug reports, or feature requests, please visit the embed shortcode extension for Quarto community forum or contact our support team through the official channels outlined in the documentation.</p>
+<p>The <code>revealjs</code> short code generates an embedded <code>&lt;iframe&gt;</code> area for HTML websites. You can use it with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; revealjs file="assets/slides-reveal.html" &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For example, we can show the <code>slides-reveal.html</code> with:</p>
+<div>
+<iframe class="slide-deck" src="assets/slides-reveal.html" height=""></iframe>
+</div>
+  
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -750,4 +666,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/coatless-quarto/embedio/edit/main/qembedio-faq.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/coatless-quarto/embedio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/coatless-quarto/embedio/edit/main/qembedio-embed-revealjs.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/coatless-quarto/embedio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
