@@ -1,0 +1,14 @@
+---
+title: "Embed RevealJS Slides"
+---
+
+The `revealjs` short code generates an embedded `<iframe>` area for HTML websites. You can use it with:
+
+```markdown
+{{{< revealjs file="assets/slides-reveal.html" >}}}
+```
+
+For example, we can show the `slides-reveal.html` with:
+
+{{< revealjs file="assets/slides-reveal.html" >}}
+

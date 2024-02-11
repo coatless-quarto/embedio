@@ -4,8 +4,8 @@ title: "Embed PDF"
 
 The `pdf` short code generates an embedded PDF object for HTML websites. You can use it with:
 
-```{=markdown}
-{{< pdf file="assets/test.pdf" >}}
+```markdown
+{{{< pdf file="assets/test.pdf" >}}}
 ```
 
 For example, we can show the `test.pdf` with:

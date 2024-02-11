@@ -19,6 +19,8 @@ website:
         contents:
         - text: "PDF"
           href: qembedio-embed-pdf.qmd
+        - text: "RevealJS"
+          href: qembedio-embed-revealjs.qmd
         - text: "HTML"
         - text: "Audio"
         - text: "Maps"
