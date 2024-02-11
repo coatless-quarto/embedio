@@ -1,34 +1,35 @@
 [
   {
-    "objectID": "qembedio-embed-pdf.html",
-    "href": "qembedio-embed-pdf.html",
-    "title": "Embed PDF",
+    "objectID": "qembedio-embed-audio.html",
+    "href": "qembedio-embed-audio.html",
+    "title": "Embed Audio",
     "section": "",
-    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\n{{&lt; pdf file=\"assets/test.pdf\" &gt;}}\nFor example, we can show the test.pdf with:\n  \n    Unable to display PDF file. Download instead.",
+    "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\n{{&lt; audio file=\"assets/test.mp3\" &gt;}}\nFor example, we can show the test.mp3 with:\nYour browser does not support the audio tag.",
     "crumbs": [
       "Demos",
-      "PDF"
+      "Audio"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "qembedio-release-notes.html",
+    "href": "qembedio-release-notes.html",
+    "title": "Release Notes",
     "section": "",
-    "text": "The embedio shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto’s shortcode mechanism.",
+    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
     "crumbs": [
-      "Home"
+      "Extra",
+      "Release Notes"
     ]
   },
   {
-    "objectID": "qembedio-embed-revealjs.html",
-    "href": "qembedio-embed-revealjs.html",
-    "title": "Embed RevealJS Slides",
+    "objectID": "qembedio-release-notes.html#features",
+    "href": "qembedio-release-notes.html#features",
+    "title": "Release Notes",
     "section": "",
-    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for HTML websites. You can use it with:\n{{&lt; revealjs file=\"assets/slides-reveal.html\" &gt;}}\nFor example, we can show the slides-reveal.html with:",
+    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
     "crumbs": [
-      "Demos",
-      "RevealJS"
+      "Extra",
+      "Release Notes"
     ]
   },
   {
@@ -131,25 +132,35 @@
     ]
   },
   {
-    "objectID": "qembedio-release-notes.html",
-    "href": "qembedio-release-notes.html",
-    "title": "Release Notes",
+    "objectID": "qembedio-embed-revealjs.html",
+    "href": "qembedio-embed-revealjs.html",
+    "title": "Embed RevealJS Slides",
     "section": "",
-    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
+    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for HTML websites. You can use it with:\n{{&lt; revealjs file=\"assets/slides-reveal.html\" &gt;}}\nFor example, we can show the slides-reveal.html with:",
     "crumbs": [
-      "Extra",
-      "Release Notes"
+      "Demos",
+      "RevealJS"
     ]
   },
   {
-    "objectID": "qembedio-release-notes.html#features",
-    "href": "qembedio-release-notes.html#features",
-    "title": "Release Notes",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
     "section": "",
-    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
+    "text": "The embedio shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto’s shortcode mechanism.",
     "crumbs": [
-      "Extra",
-      "Release Notes"
+      "Home"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-pdf.html",
+    "href": "qembedio-embed-pdf.html",
+    "title": "Embed PDF",
+    "section": "",
+    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\n{{&lt; pdf file=\"assets/test.pdf\" &gt;}}\nFor example, we can show the test.pdf with:\n  \n    Unable to display PDF file. Download instead.",
+    "crumbs": [
+      "Demos",
+      "PDF"
     ]
   }
 ]
