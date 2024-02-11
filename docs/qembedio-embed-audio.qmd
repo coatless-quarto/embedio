@@ -1,0 +1,14 @@
+---
+title: "Embed Audio"
+---
+
+The `audio` short code generates an embedded audio object for HTML websites. You can use it with:
+
+```markdown
+{{{< audio file="assets/test.mp3" >}}}
+```
+
+For example, we can show the `test.mp3` with:
+
+{{< audio file="assets/test.mp3" >}}
+

@@ -5,5 +5,6 @@ version: 0.0.0-dev.1
 quarto-required: ">=1.4.549"
 contributes:
   shortcodes:
+    - audio.lua
     - pdf.lua
     - revealjs.lua
