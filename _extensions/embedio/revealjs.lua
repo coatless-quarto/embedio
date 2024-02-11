@@ -25,6 +25,11 @@ local function ensureSlideCSSPresent()
 end
 
 local function revealjs(args, kwargs, meta , raw_args)
+  
+  if not quarto.doc.is_format("html") then
+    return
+  end
+
   -- Enable CSS
   ensureSlideCSSPresent()
 

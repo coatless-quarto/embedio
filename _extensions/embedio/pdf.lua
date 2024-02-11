@@ -1,5 +1,9 @@
 local function pdf(args, kwargs, meta)
 
+  if not quarto.doc.is_format("html") then
+    return
+  end
+
   -- Supported options for now
   local pdf_file_name = pandoc.utils.stringify(kwargs["file"])
   local height = pandoc.utils.stringify(kwargs["height"]) or "600px"
