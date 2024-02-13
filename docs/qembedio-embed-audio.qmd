@@ -12,3 +12,13 @@ For example, we can show the `test.mp3` with:
 
 {{< audio file="assets/test.mp3" >}}
 
+## Options
+
+| Keyword Argument | Default Value | Description                                           |
+|------------------|---------------|-------------------------------------------------------|
+| `file`           | `""`          | Specifies the input file path for the audio element.  |
+| `caption`        | `""`          | Specifies the caption for the audio element.          |
+| `class`          | `""`          | Specifies the class attribute for the figure element. |
+| `download`       | `"false"`     | Specifies whether to include a download link.         |
+
+You may also omit specifying a `file` option. We'll automatically use the first parameter as the `file`
