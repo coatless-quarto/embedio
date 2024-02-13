@@ -4,7 +4,18 @@
     "href": "qembedio-embed-audio.html",
     "title": "Embed Audio",
     "section": "",
-    "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\n{{&lt; audio file=\"assets/test.mp3\" &gt;}}\nFor example, we can show the test.mp3 with:\nYour browser does not support the audio tag.",
+    "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\nFor example, we can show the test.mp3 with:",
+    "crumbs": [
+      "Demos",
+      "Audio"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-audio.html#options",
+    "href": "qembedio-embed-audio.html#options",
+    "title": "Embed Audio",
+    "section": "Options",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\n\"\"\nSpecifies the input file path for the audio element.\n\n\ncaption\n\"\"\nSpecifies the caption for the audio element.\n\n\nclass\n\"\"\nSpecifies the class attribute for the figure element.\n\n\ndownload\n\"false\"\nSpecifies whether to include a download link.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
     "crumbs": [
       "Demos",
       "Audio"
