@@ -1,5 +1,8 @@
 ---
 title: "Home"
+format: 
+  html:
+    toc: false
 ---
 
 The `embedio` shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto's shortcode mechanism.

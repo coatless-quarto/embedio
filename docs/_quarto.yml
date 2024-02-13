@@ -35,3 +35,7 @@ website:
       - section: "Extra"
         contents:
         - qembedio-release-notes.qmd
+
+format: 
+  html:
+    toc: true
