@@ -5,7 +5,9 @@ local function pdf(args, kwargs, meta)
   end
 
   -- Supported options for now
-  local pdf_file_name = pandoc.utils.stringify(kwargs["file"])
+  local pdf_file_name = args[1] or kwargs["file"]
+  pdf_file_name = pandoc.utils.stringify(pdf_file_name)
+  
   local height = pandoc.utils.stringify(kwargs["height"]) or "600px"
   local width = pandoc.utils.stringify(kwargs["height"]) or "100%"
 

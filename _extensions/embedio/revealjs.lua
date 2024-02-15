@@ -34,7 +34,8 @@ local function revealjs(args, kwargs, meta , raw_args)
   ensureSlideCSSPresent()
 
   -- Supported options for now
-  local slide_file_name = pandoc.utils.stringify(kwargs["file"])
+  local slide_file_name = args[1] or kwargs["file"]
+  slide_file_name = pandoc.utils.stringify(slide_file_name)
   local height = pandoc.utils.stringify(kwargs["height"]) or "475px"
 
   -- HTML block

@@ -12,3 +12,12 @@ For example, we can show the `test.pdf` with:
 
 {{< pdf file="assets/test.pdf" >}}
 
+## Options
+
+| Keyword Argument | Default Value | Description                                              |
+|-------------------|---------------|----------------------------------------------------------|
+| `file`            | None          | Specifies the input PDF file path.                       |
+| `height`          | "600px"       | Specifies the height of the embedded PDF object.         |
+| `width`           | "100%"        | Specifies the width of the embedded PDF object.          |
+
+You may also omit specifying a `file` option. We'll automatically use the first parameter as the `file`
