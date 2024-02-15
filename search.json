@@ -1,5 +1,27 @@
 [
   {
+    "objectID": "qembedio-embed-revealjs.html",
+    "href": "qembedio-embed-revealjs.html",
+    "title": "Embed RevealJS Slides",
+    "section": "",
+    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for HTML websites. You can use it with:\nFor example, we can show the slides-reveal.html with:",
+    "crumbs": [
+      "Demos",
+      "RevealJS"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-revealjs.html#options",
+    "href": "qembedio-embed-revealjs.html#options",
+    "title": "Embed RevealJS Slides",
+    "section": "Options",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the Reveal.js slides.\n\n\nheight\n“475px”\nSpecifies the height of the embedded slide deck.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
+    "crumbs": [
+      "Demos",
+      "RevealJS"
+    ]
+  },
+  {
     "objectID": "qembedio-embed-audio.html",
     "href": "qembedio-embed-audio.html",
     "title": "Embed Audio",
@@ -22,25 +44,25 @@
     ]
   },
   {
-    "objectID": "qembedio-release-notes.html",
-    "href": "qembedio-release-notes.html",
-    "title": "Release Notes",
+    "objectID": "qembedio-embed-pdf.html",
+    "href": "qembedio-embed-pdf.html",
+    "title": "Embed PDF",
     "section": "",
-    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
+    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, we can show the test.pdf with:",
     "crumbs": [
-      "Extra",
-      "Release Notes"
+      "Demos",
+      "PDF"
     ]
   },
   {
-    "objectID": "qembedio-release-notes.html#features",
-    "href": "qembedio-release-notes.html#features",
-    "title": "Release Notes",
-    "section": "",
-    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
+    "objectID": "qembedio-embed-pdf.html#options",
+    "href": "qembedio-embed-pdf.html#options",
+    "title": "Embed PDF",
+    "section": "Options",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input PDF file path.\n\n\nheight\n“600px”\nSpecifies the height of the embedded PDF object.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded PDF object.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
     "crumbs": [
-      "Extra",
-      "Release Notes"
+      "Demos",
+      "PDF"
     ]
   },
   {
@@ -143,17 +165,6 @@
     ]
   },
   {
-    "objectID": "qembedio-embed-revealjs.html",
-    "href": "qembedio-embed-revealjs.html",
-    "title": "Embed RevealJS Slides",
-    "section": "",
-    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for HTML websites. You can use it with:\n{{&lt; revealjs file=\"assets/slides-reveal.html\" &gt;}}\nFor example, we can show the slides-reveal.html with:",
-    "crumbs": [
-      "Demos",
-      "RevealJS"
-    ]
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Home",
@@ -164,14 +175,25 @@
     ]
   },
   {
-    "objectID": "qembedio-embed-pdf.html",
-    "href": "qembedio-embed-pdf.html",
-    "title": "Embed PDF",
+    "objectID": "qembedio-release-notes.html",
+    "href": "qembedio-release-notes.html",
+    "title": "Release Notes",
     "section": "",
-    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\n{{&lt; pdf file=\"assets/test.pdf\" &gt;}}\nFor example, we can show the test.pdf with:\n  \n    Unable to display PDF file. Download instead.",
+    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
     "crumbs": [
-      "Demos",
-      "PDF"
+      "Extra",
+      "Release Notes"
+    ]
+  },
+  {
+    "objectID": "qembedio-release-notes.html#features",
+    "href": "qembedio-release-notes.html#features",
+    "title": "Release Notes",
+    "section": "",
+    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
+    "crumbs": [
+      "Extra",
+      "Release Notes"
     ]
   }
 ]
