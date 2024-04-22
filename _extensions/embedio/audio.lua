@@ -2,7 +2,7 @@ local function audio(args, kwargs, meta)
 
     if not quarto.doc.is_format("html") then
         return
-    end 
+    end
 
     -- Start of HTML tag
     local htmlTable = {"<figure "} 
@@ -57,7 +57,7 @@ local function audio(args, kwargs, meta)
     
     -- Add download link if provided
     if download == "true" then
-        table.insert(htmlTable, '<a href="' .. input ..'"> Download audio </a>')
+        table.insert(htmlTable, '<br /><a href="' .. input ..'"> Download audio </a>')
     end    
 
     -- Add closing figure tag
