@@ -1,0 +1,6 @@
+---
+title: "Example PDF document"
+format: pdf
+---
+
+Hi! This is an embedded PDF with `embedio`.

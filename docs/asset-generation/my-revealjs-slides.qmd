@@ -1,0 +1,25 @@
+---
+title: "Example RevealJS Slides"
+format: revealjs
+embed-resources: true
+---
+
+## Welcome
+
+Hi! This is an embedded RevealJS slide deck with `embedio`.
+
+## Some code
+
+```r
+1 + 1
+```
+
+## Math
+
+Display mode:
+
+$$c^2 = a^2 + b^2$$
+
+Inline mode: 
+
+$x = 1 + 2$
