@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+   - assets/*
 
 website:
   title: "embedio"
