@@ -36,7 +36,8 @@ local function revealjs(args, kwargs, meta , raw_args)
   -- Supported options for now
   local slide_file_name = args[1] or kwargs["file"]
   slide_file_name = pandoc.utils.stringify(slide_file_name)
-  local height = pandoc.utils.stringify(kwargs["height"]) or "475px"
+  local height = pandoc.utils.stringify(kwargs["height"]) 
+  height = height and height or "475px"
 
   -- HTML block
   local template_revealjs = [[

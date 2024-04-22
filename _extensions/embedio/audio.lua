@@ -53,7 +53,8 @@ local function audio(args, kwargs, meta)
     table.insert(htmlTable, "</audio>")
 
     -- Extract download option
-    local download = pandoc.utils.stringify(kwargs.download) or "false"
+    local download = pandoc.utils.stringify(kwargs.download) 
+    download = download and download or "false"
     
     -- Add download link if provided
     if download == "true" then

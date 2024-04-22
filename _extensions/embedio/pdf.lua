@@ -8,8 +8,10 @@ local function pdf(args, kwargs, meta)
   local pdf_file_name = args[1] or kwargs["file"]
   pdf_file_name = pandoc.utils.stringify(pdf_file_name)
   
-  local height = pandoc.utils.stringify(kwargs["height"]) or "600px"
-  local width = pandoc.utils.stringify(kwargs["height"]) or "100%"
+  local height = pandoc.utils.stringify(kwargs["height"])
+  height = height and height or "600px"
+  local width = pandoc.utils.stringify(kwargs["width"])
+  width = width and height or "100%"
 
   -- HTML block
   local template_pdf = [[
