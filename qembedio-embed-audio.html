@@ -258,9 +258,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>The <code>audio</code> short code generates an embedded audio object for HTML websites. You can use it with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; audio file="assets/my-audio.mp3" download="true"&gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For example, we can embed the <code>my-audio.mp3</code> in the <code>assets/</code> with:</p>
-<figure class="figure"><figcaption></figcaption><audio controls="" src="assets/my-audio.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio><br><a href="assets/my-audio.mp3"> Download audio </a></figure>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; audio file="assets/my-audio.mp3" caption="Sample Audio File"&gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For example, the above shortcode embeds the <code>my-audio.mp3</code> in <code>assets/</code> with:</p>
+<figure class="figure"><audio controls="" src="assets/my-audio.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio><figcaption>Sample Audio File</figcaption></figure>
 <section id="options" class="level2">
 <h2 class="anchored" data-anchor-id="options">Options</h2>
 <table class="table">
@@ -293,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Specifies the class attribute for the figure element.</td>
 </tr>
 <tr class="even">
-<td><code>download</code></td>
+<td><code>download-link</code></td>
 <td><code>"false"</code></td>
 <td>Specifies whether to include a download link.</td>
 </tr>

@@ -26,7 +26,7 @@
     "href": "qembedio-embed-pdf.html",
     "title": "Embed PDF",
     "section": "",
-    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, we can show the my-pdf-file.pdf with:\nDownload PDF File",
+    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-pdf-file.pdf in assets/ as:\nDownload PDF File",
     "crumbs": [
       "Demos",
       "PDF"
@@ -48,7 +48,7 @@
     "href": "qembedio-embed-audio.html",
     "title": "Embed Audio",
     "section": "",
-    "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\nFor example, we can embed the my-audio.mp3 in the assets/ with:",
+    "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-audio.mp3 in assets/ with:",
     "crumbs": [
       "Demos",
       "Audio"
@@ -59,7 +59,7 @@
     "href": "qembedio-embed-audio.html#options",
     "title": "Embed Audio",
     "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\n\"\"\nSpecifies the input file path for the audio element.\n\n\ncaption\n\"\"\nSpecifies the caption for the audio element.\n\n\nclass\n\"\"\nSpecifies the class attribute for the figure element.\n\n\ndownload\n\"false\"\nSpecifies whether to include a download link.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\n\"\"\nSpecifies the input file path for the audio element.\n\n\ncaption\n\"\"\nSpecifies the caption for the audio element.\n\n\nclass\n\"\"\nSpecifies the class attribute for the figure element.\n\n\ndownload-link\n\"false\"\nSpecifies whether to include a download link.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
     "crumbs": [
       "Demos",
       "Audio"
@@ -136,7 +136,7 @@
     "href": "qembedio-faq.html#how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto",
     "title": "Frequently Asked Questions",
     "section": "How do I embed an HTML slide using the embedio shortcode extension for Quarto?",
-    "text": "How do I embed an HTML slide using the embedio shortcode extension for Quarto?\nEmbedding an HTML slide is straightforward. Please use:",
+    "text": "How do I embed an HTML slide using the embedio shortcode extension for Quarto?\nEmbedding an HTML slide is straightforward. Please use:\nFor more details, please see Demo: RevealJS.",
     "crumbs": [
       "Support",
       "FAQ"
@@ -147,7 +147,7 @@
     "href": "qembedio-faq.html#im-encountering-issues-with-embedding-files.-what-should-i-do",
     "title": "Frequently Asked Questions",
     "section": "I’m encountering issues with embedding files. What should I do?",
-    "text": "I’m encountering issues with embedding files. What should I do?\nIf you’re experiencing difficulties with file embedding, first ensure that your Quarto project has the embedio shortcode extension installed by looking in the _extensions folder.\nNext, make sure that the resource is specified in the resources key under the publishing format:\n---\ntitle: Example resource inclusion\nformat:\n  html: \n    resources: \n    - path/to/file.pdf\n---",
+    "text": "I’m encountering issues with embedding files. What should I do?\nIf you’re experiencing difficulties with file embedding, first ensure that your Quarto project has the embedio shortcode extension installed by looking in the _extensions folder.\nNext, make sure that the resource is specified in the resources key under the publishing format:\n---\ntitle: Example resource inclusion\nformat:\n  html: \n    resources: \n    - path/to/file.pdf\n---\nIf using a Quarto project with a _quarto.yml file, it is better practice to declare all assets in an assets directory under the resources key. For example, we have in our documentation website’s _quarto.yml file:\nproject:\n  type: website\n  resources:\n   - assets/*\n\n\n\n\n\n\nNote\n\n\n\nThe asterisks, *, means to include all files within that directory.",
     "crumbs": [
       "Support",
       "FAQ"
@@ -158,7 +158,18 @@
     "href": "qembedio-faq.html#are-there-known-compatibility-issues-with-certain-browsers",
     "title": "Frequently Asked Questions",
     "section": "Are there known compatibility issues with certain browsers?",
-    "text": "Are there known compatibility issues with certain browsers?\nThe are no known compatible with major browsers. However, if you encounter issues, please feel free to raise them in the project’s issue tracker and consider updating your browser to the latest version.\nFor additional support, bug reports, or feature requests, please visit the embed shortcode extension for Quarto community forum or contact our support team through the official channels outlined in the documentation.",
+    "text": "Are there known compatibility issues with certain browsers?\nThe are no known compatible with major browsers. However, if you encounter issues, please feel free to raise them in the project’s issue tracker and consider updating your browser to the latest version.",
+    "crumbs": [
+      "Support",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "qembedio-faq.html#how-can-i-get-help",
+    "href": "qembedio-faq.html#how-can-i-get-help",
+    "title": "Frequently Asked Questions",
+    "section": "How can I get help?",
+    "text": "How can I get help?\nFor additional support, bug reports, or feature requests, please visit the embed shortcode extension for Quarto community forum or contact our support team through the official channels outlined in the documentation.",
     "crumbs": [
       "Support",
       "FAQ"
@@ -169,7 +180,7 @@
     "href": "qembedio-embed-revealjs.html",
     "title": "Embed RevealJS Slides",
     "section": "",
-    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for HTML websites. You can use it with:\nFor example, we can show the my-revealjs-slides.html with:\nView slides in full screen",
+    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-revealjs-slides.html in assets/ as:\nView slides in full screen",
     "crumbs": [
       "Demos",
       "RevealJS"

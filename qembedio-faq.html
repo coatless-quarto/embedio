@@ -101,6 +101,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+ 
+  <style>
+  .slide-deck {
+      border: 3px solid #dee2e6;
+      width: 100%;
+  }
+  </style>
+  
 
 
 </head>
@@ -246,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#what-file-types-does-the-embed-shortcode-extension-for-quarto-support-for-embedding" id="toc-what-file-types-does-the-embed-shortcode-extension-for-quarto-support-for-embedding" class="nav-link" data-scroll-target="#what-file-types-does-the-embed-shortcode-extension-for-quarto-support-for-embedding">What file types does the embed shortcode extension for Quarto support for embedding?</a></li>
   <li><a href="#can-i-embed-interactive-content-with-the-embed-shortcode-extension-for-quarto" id="toc-can-i-embed-interactive-content-with-the-embed-shortcode-extension-for-quarto" class="nav-link" data-scroll-target="#can-i-embed-interactive-content-with-the-embed-shortcode-extension-for-quarto">Can I embed interactive content with the embed shortcode extension for Quarto?</a></li>
   </ul></li>
-  <li><a href="#usage-and-customization" id="toc-usage-and-customization" class="nav-link" data-scroll-target="#usage-and-customization">Usage and Customization:</a>
+  <li><a href="#usage-and-customization" id="toc-usage-and-customization" class="nav-link" data-scroll-target="#usage-and-customization">Usage and Customization</a>
   <ul class="collapse">
   <li><a href="#how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto" id="toc-how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto" class="nav-link" data-scroll-target="#how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto">How do I embed an HTML slide using the embedio shortcode extension for Quarto?</a></li>
   </ul></li>
@@ -254,6 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#im-encountering-issues-with-embedding-files.-what-should-i-do" id="toc-im-encountering-issues-with-embedding-files.-what-should-i-do" class="nav-link" data-scroll-target="#im-encountering-issues-with-embedding-files.-what-should-i-do">I’m encountering issues with embedding files. What should I do?</a></li>
   <li><a href="#are-there-known-compatibility-issues-with-certain-browsers" id="toc-are-there-known-compatibility-issues-with-certain-browsers" class="nav-link" data-scroll-target="#are-there-known-compatibility-issues-with-certain-browsers">Are there known compatibility issues with certain browsers?</a></li>
+  <li><a href="#how-can-i-get-help" id="toc-how-can-i-get-help" class="nav-link" data-scroll-target="#how-can-i-get-help">How can I get help?</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/coatless-quarto/embedio/edit/main/qembedio-faq.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/coatless-quarto/embedio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -322,10 +331,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="usage-and-customization" class="level1">
-<h1>Usage and Customization:</h1>
+<h1>Usage and Customization</h1>
 <section id="how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto">How do I embed an HTML slide using the embedio shortcode extension for Quarto?</h2>
 <p>Embedding an HTML slide is straightforward. Please use:</p>
+<p>For more details, please see <a href="./qembedio-embed-revealjs.html">Demo: RevealJS</a>.</p>
 </section>
 </section>
 <section id="troubleshooting" class="level1">
@@ -341,10 +351,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">resources</span><span class="kw">:</span><span class="at"> </span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> path/to/file.pdf</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If using a Quarto project with a <code>_quarto.yml</code> file, it is better practice to declare all assets in an <code>assets</code> directory under the <code>resources</code> key. For example, we have in our documentation website’s <code>_quarto.yml</code> file:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">resources</span><span class="kw">:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="kw">-</span><span class="at"> assets/*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The asterisks, <code>*</code>, means to include all files within that directory.</p>
+</div>
+</div>
 </section>
 <section id="are-there-known-compatibility-issues-with-certain-browsers" class="level2">
 <h2 class="anchored" data-anchor-id="are-there-known-compatibility-issues-with-certain-browsers">Are there known compatibility issues with certain browsers?</h2>
 <p>The are no known compatible with major browsers. However, if you encounter issues, please feel free to raise them in the project’s issue tracker and consider updating your browser to the latest version.</p>
+</section>
+<section id="how-can-i-get-help" class="level2">
+<h2 class="anchored" data-anchor-id="how-can-i-get-help">How can I get help?</h2>
 <p>For additional support, bug reports, or feature requests, please visit the embed shortcode extension for Quarto community forum or contact our support team through the official channels outlined in the documentation.</p>
 
 
