@@ -109,30 +109,30 @@ local function audio(args, kwargs, meta)
   -- Start of HTML tag
   local htmlTable = {"<figure "} 
 
-  -- Extracting caption and class from kwargs
+  -- Extracting caption, class, and download from kwargs
   local caption = pandoc.utils.stringify(kwargs.caption)
   local class = pandoc.utils.stringify(kwargs.class)
-  
-  -- Add class attribute if provided
-  if class then
-      table.insert(htmlTable, 'class="' .. class .. '">')
-  end
-
-  -- Add caption if provided
-  if caption then
-      table.insert(htmlTable, '<figcaption>' .. caption .. '</figcaption>')
-  end
-
-  -- Start the audio tag
-  table.insert(htmlTable, "<audio controls")
+  local download_link = getOption(kwargs, "download-link", "false")
 
   -- Extracting input from args or kwargs
   local input = pandoc.utils.stringify(args[1] or kwargs.file)
   checkFile(input)
 
+  -- Add class attribute if provided
+  if class then
+      table.insert(htmlTable, 'class="' .. class .. '">')
+  end
+
+  -- Add download link if provided
+  if download_link == "true" then
+    table.insert(htmlTable, '<p><a href="' .. input ..'"> Download audio file</a></p><br />')
+  end
+
+  -- Start the audio tag
+  table.insert(htmlTable, "<audio controls")
+
   -- Add source attribute with input file path
   table.insert(htmlTable, ' src="' .. input .. '"')
-
 
   -- Automatically detect file type from the file extension
   local fileType = string.match(input, "%.([^%.]+)$")
@@ -150,13 +150,10 @@ local function audio(args, kwargs, meta)
   -- Add closing audio tag
   table.insert(htmlTable, "</audio>")
 
-  -- Extract download option
-  local download = getOption(kwargs, "download", "false")
-  
-  -- Add download link if provided
-  if download == "true" then
-      table.insert(htmlTable, '<br /><a href="' .. input ..'"> Download audio </a>')
-  end    
+  -- Add caption if provided
+  if caption then
+    table.insert(htmlTable, '<figcaption>' .. caption .. '</figcaption>')
+  end
 
   -- Add closing figure tag
   table.insert(htmlTable, "</figure>")
