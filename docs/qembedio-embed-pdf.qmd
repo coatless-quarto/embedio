@@ -5,19 +5,20 @@ title: "Embed PDF"
 The `pdf` short code generates an embedded PDF object for HTML websites. You can use it with:
 
 ```markdown
-{{{< pdf file="assets/test.pdf"  height="700px">}}}
+{{{< pdf file="assets/test.pdf"  height="500px">}}}
 ```
 
 For example, we can show the `my-pdf-file.pdf` with:
 
-{{< pdf file="assets/my-pdf-file.pdf" height="700px">}}
+{{< pdf file="assets/my-pdf-file.pdf" height="500px">}}
 
 ## Options
 
 | Keyword Argument | Default Value | Description                                              |
 |-------------------|---------------|----------------------------------------------------------|
 | `file`            | None          | Specifies the input PDF file path.                       |
-| `height`          | "600px"       | Specifies the height of the embedded PDF object.         |
+| `height`          | "850px"       | Specifies the height of the embedded PDF object.         |
 | `width`           | "100%"        | Specifies the width of the embedded PDF object.          |
+| `download-link`    | "true"        | Add a link to download the embedded PDF in a new browser window.         |
 
 You may also omit specifying a `file` option. We'll automatically use the first parameter as the `file`
