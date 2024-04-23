@@ -17,7 +17,7 @@ website:
     contents: 
       - text: "Home"
         file: index.qmd
-      - section: "Demos"
+      - section: "Shortcodes"
         contents:
         - text: "PDF"
           href: qembedio-embed-pdf.qmd
