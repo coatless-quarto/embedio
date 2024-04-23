@@ -15,8 +15,9 @@ For example, we can show the `my-revealjs-slides.html` with:
 ## Options
 
 | Keyword Argument | Default Value | Description                                              |
-|-------------------|---------------|----------------------------------------------------------|
-| `file`            | None          | Specifies the input file path for the Reveal.js slides.  |
-| `height`          | "475px"       | Specifies the height of the embedded slide deck.         |
+|------------------|---------------|----------------------------------------------------------|
+| `file`           | None          | Specifies the input file path for the Reveal.js slides.  |
+| `height`         | "475px"       | Specifies the height of the embedded slide deck.         |
+| `full-screen-link`    | "true"        | Add a link to view the embedded slide deck in a new full screen browser window.         |
 
 You may also omit specifying a `file` option. We'll automatically use the first parameter as the `file`
