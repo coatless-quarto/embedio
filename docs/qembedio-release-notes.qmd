@@ -8,11 +8,11 @@ format:
     toc: true
 ---
 
-
-# 0.0.0-dev.1: ??? (??-??-??) [DEV]
+# 0.0.1: If It Fits, I Sits (04-22-2024)
 
 ## Features
 
 - `embedio` shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.
   - `pdf`: Include a PDF file
   - `revealjs`: Include RevealJS slides
+  - `audio`: Include an Audio file
