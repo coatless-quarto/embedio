@@ -34,16 +34,17 @@ The embed shortcode extension for Quarto supports a wide range of file types, in
 
 Yes, the embed shortcode extension for Quarto enables the embedding of interactive content, such as HTML slides with dynamic elements. Explore the documentation for details on incorporating interactive features into your embedded content.
 
-# Usage and Customization:
+# Usage and Customization
 
 ## How do I embed an HTML slide using the embedio shortcode extension for Quarto?
 
 Embedding an HTML slide is straightforward. Please use:
 
 ```{=markdown}
-{{< embed-slides file="path-to-slides" >}}
+{{< revealjs file="path/to/slides.html" >}}
 ```
 
+For more details, please see [Demo: RevealJS](qembedio-embed-revealjs.qmd).
 
 # Troubleshooting
 
@@ -63,8 +64,23 @@ format:
 ---
 ```
 
+If using a Quarto project with a `_quarto.yml` file, it is better practice to declare all assets in an `assets` directory under the `resources` key. For example, we have in our documentation website's `_quarto.yml` file:
+
+```yaml
+project:
+  type: website
+  resources:
+   - assets/*
+```
+
+:::{.callout-note}
+The asterisks, `*`, means to include all files within that directory.
+:::
+
 ## Are there known compatibility issues with certain browsers?
 
 The are no known compatible with major browsers. However, if you encounter issues, please feel free to raise them in the project's issue tracker and consider updating your browser to the latest version.
+
+## How can I get help? 
 
 For additional support, bug reports, or feature requests, please visit the embed shortcode extension for Quarto community forum or contact our support team through the official channels outlined in the documentation.
