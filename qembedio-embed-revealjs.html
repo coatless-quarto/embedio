@@ -268,15 +268,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <code>revealjs</code> short code generates an embedded <code>&lt;iframe&gt;</code> area for HTML websites. You can use it with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; revealjs file="assets/my-revealjs-slides.html" height="500px"&gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For example, we can show the <code>my-revealjs-slides.html</code> with:</p>
-<div>
+  <p><a href="assets/my-revealjs-slides.html" target="_blank">View slides in full screen</a></p>
+ <div>
 <iframe class="slide-deck" src="assets/my-revealjs-slides.html" height="500px"></iframe>
 </div>
-  
+
 <section id="options" class="level2">
 <h2 class="anchored" data-anchor-id="options">Options</h2>
 <table class="table">
 <colgroup>
-<col style="width: 20%">
+<col style="width: 19%">
 <col style="width: 16%">
 <col style="width: 63%">
 </colgroup>
@@ -297,6 +298,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><code>height</code></td>
 <td>“475px”</td>
 <td>Specifies the height of the embedded slide deck.</td>
+</tr>
+<tr class="odd">
+<td><code>full-screen-link</code></td>
+<td>“true”</td>
+<td>Add a link to view the embedded slide deck in a new full screen browser window.</td>
 </tr>
 </tbody>
 </table>

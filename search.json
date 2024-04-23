@@ -4,7 +4,7 @@
     "href": "qembedio-release-notes.html",
     "title": "Release Notes",
     "section": "",
-    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
+    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides\naudio: Include an Audio file",
     "crumbs": [
       "Extra",
       "Release Notes"
@@ -15,7 +15,7 @@
     "href": "qembedio-release-notes.html#features",
     "title": "Release Notes",
     "section": "",
-    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides",
+    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides\naudio: Include an Audio file",
     "crumbs": [
       "Extra",
       "Release Notes"
@@ -26,7 +26,7 @@
     "href": "qembedio-embed-pdf.html",
     "title": "Embed PDF",
     "section": "",
-    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, we can show the my-pdf-file.pdf with:",
+    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, we can show the my-pdf-file.pdf with:\nDownload PDF File",
     "crumbs": [
       "Demos",
       "PDF"
@@ -37,7 +37,7 @@
     "href": "qembedio-embed-pdf.html#options",
     "title": "Embed PDF",
     "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input PDF file path.\n\n\nheight\n“600px”\nSpecifies the height of the embedded PDF object.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded PDF object.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input PDF file path.\n\n\nheight\n“850px”\nSpecifies the height of the embedded PDF object.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded PDF object.\n\n\ndownload-link\n“true”\nAdd a link to download the embedded PDF in a new browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
     "crumbs": [
       "Demos",
       "PDF"
@@ -169,7 +169,7 @@
     "href": "qembedio-embed-revealjs.html",
     "title": "Embed RevealJS Slides",
     "section": "",
-    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for HTML websites. You can use it with:\nFor example, we can show the my-revealjs-slides.html with:",
+    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for HTML websites. You can use it with:\nFor example, we can show the my-revealjs-slides.html with:\nView slides in full screen",
     "crumbs": [
       "Demos",
       "RevealJS"
@@ -180,7 +180,7 @@
     "href": "qembedio-embed-revealjs.html#options",
     "title": "Embed RevealJS Slides",
     "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the Reveal.js slides.\n\n\nheight\n“475px”\nSpecifies the height of the embedded slide deck.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the Reveal.js slides.\n\n\nheight\n“475px”\nSpecifies the height of the embedded slide deck.\n\n\nfull-screen-link\n“true”\nAdd a link to view the embedded slide deck in a new full screen browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
     "crumbs": [
       "Demos",
       "RevealJS"
@@ -192,6 +192,26 @@
     "title": "Home",
     "section": "",
     "text": "The embedio shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto’s shortcode mechanism.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "Home",
+    "section": "Installation",
+    "text": "Installation\nTo install the embedio shortcode extension, follow these steps:\n\nOpen your terminal.\nExecute the following command:\n\nquarto add coatless-quarto/embedio\nThis command will download and install the shortcode extension under the _extensions subdirectory of your Quarto project. If you are using version control, ensure that you include this directory in your repository.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "Home",
+    "section": "Usage",
+    "text": "Usage\nWe presently support the following shortcodes:\n\n\n\nShortcode\nDescription\n\n\n\n\naudio\nEmbeds an audio player with optional caption and download link.\n\n\npdf\nEmbeds a PDF file with customizable width and height.\n\n\nrevealjs\nEmbeds a Reveal.js slide deck with optional height.\n\n\n\nYou can use the shortcode immediately in a Quarto project that has the extension installed by typing into the document:\n{{&lt; shortcode-name filename &gt;}}\nFor example, we can embed RevealJS slides using:",
     "crumbs": [
       "Home"
     ]

@@ -258,9 +258,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>The <code>pdf</code> short code generates an embedded PDF object for HTML websites. You can use it with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; pdf file="assets/test.pdf"  height="700px"&gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; pdf file="assets/test.pdf"  height="500px"&gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For example, we can show the <code>my-pdf-file.pdf</code> with:</p>
-  <object data="assets/my-pdf-file.pdf" type="application/pdf" width="700px" height="700px">
+  <p><a href="assets/my-pdf-file.pdf" target="_blank">Download PDF File</a></p>
+   <object data="assets/my-pdf-file.pdf" type="application/pdf" width="100%" height="500px">
     <p>Unable to display PDF file. <a href="assets/my-pdf-file.pdf">Download</a> instead.</p>
   </object>
   
@@ -287,13 +288,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td><code>height</code></td>
-<td>“600px”</td>
+<td>“850px”</td>
 <td>Specifies the height of the embedded PDF object.</td>
 </tr>
 <tr class="odd">
 <td><code>width</code></td>
 <td>“100%”</td>
 <td>Specifies the width of the embedded PDF object.</td>
+</tr>
+<tr class="even">
+<td><code>download-link</code></td>
+<td>“true”</td>
+<td>Add a link to download the embedded PDF in a new browser window.</td>
 </tr>
 </tbody>
 </table>
