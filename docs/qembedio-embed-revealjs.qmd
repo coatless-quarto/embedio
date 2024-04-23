@@ -8,9 +8,9 @@ The `revealjs` short code generates an embedded `<iframe>` area for HTML website
 {{{< revealjs file="assets/my-revealjs-slides.html" height="500px">}}}
 ```
 
-For example, we can show the `my-revealjs-slides.html` with:
+For example, the above shortcode embeds the `my-revealjs-slides.html` in `assets/` as:
 
-{{< revealjs file="assets/my-revealjs-slides.html" height="500px">}}
+{{< revealjs file="assets/my-revealjs-slides.html" height="500px" >}}
 
 ## Options
 

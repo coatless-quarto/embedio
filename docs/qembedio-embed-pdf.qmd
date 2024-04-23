@@ -8,7 +8,7 @@ The `pdf` short code generates an embedded PDF object for HTML websites. You can
 {{{< pdf file="assets/test.pdf"  height="500px">}}}
 ```
 
-For example, we can show the `my-pdf-file.pdf` with:
+For example, the above shortcode embeds the `my-pdf-file.pdf` in `assets/` as:
 
 {{< pdf file="assets/my-pdf-file.pdf" height="500px">}}
 

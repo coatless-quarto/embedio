@@ -5,12 +5,12 @@ title: "Embed Audio"
 The `audio` short code generates an embedded audio object for HTML websites. You can use it with:
 
 ```markdown
-{{{< audio file="assets/my-audio.mp3" download="true">}}}
+{{{< audio file="assets/my-audio.mp3" caption="Sample Audio File">}}}
 ```
 
-For example, we can embed the `my-audio.mp3` in the `assets/` with:
+For example, the above shortcode embeds the `my-audio.mp3` in `assets/`  with:
 
-{{< audio file="assets/my-audio.mp3" download="true" >}}
+{{< audio file="assets/my-audio.mp3" caption="Sample Audio File" >}}
 
 ## Options
 
@@ -19,6 +19,6 @@ For example, we can embed the `my-audio.mp3` in the `assets/` with:
 | `file`           | `""`          | Specifies the input file path for the audio element.  |
 | `caption`        | `""`          | Specifies the caption for the audio element.          |
 | `class`          | `""`          | Specifies the class attribute for the figure element. |
-| `download`       | `"false"`     | Specifies whether to include a download link.         |
+| `download-link`       | `"false"`     | Specifies whether to include a download link.         |
 
 You may also omit specifying a `file` option. We'll automatically use the first parameter as the `file`
