@@ -28,7 +28,7 @@
     "section": "",
     "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-pdf-file.pdf in assets/ as:\nDownload PDF File",
     "crumbs": [
-      "Demos",
+      "Shortcodes",
       "PDF"
     ]
   },
@@ -39,7 +39,7 @@
     "section": "Options",
     "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input PDF file path.\n\n\nheight\n“850px”\nSpecifies the height of the embedded PDF object.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded PDF object.\n\n\ndownload-link\n“true”\nAdd a link to download the embedded PDF in a new browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
     "crumbs": [
-      "Demos",
+      "Shortcodes",
       "PDF"
     ]
   },
@@ -50,7 +50,7 @@
     "section": "",
     "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-audio.mp3 in assets/ with:",
     "crumbs": [
-      "Demos",
+      "Shortcodes",
       "Audio"
     ]
   },
@@ -61,7 +61,7 @@
     "section": "Options",
     "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\n\"\"\nSpecifies the input file path for the audio element.\n\n\ncaption\n\"\"\nSpecifies the caption for the audio element.\n\n\nclass\n\"\"\nSpecifies the class attribute for the figure element.\n\n\ndownload-link\n\"false\"\nSpecifies whether to include a download link.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
     "crumbs": [
-      "Demos",
+      "Shortcodes",
       "Audio"
     ]
   },
@@ -182,7 +182,7 @@
     "section": "",
     "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-revealjs-slides.html in assets/ as:\nView slides in full screen",
     "crumbs": [
-      "Demos",
+      "Shortcodes",
       "RevealJS"
     ]
   },
@@ -193,7 +193,7 @@
     "section": "Options",
     "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the Reveal.js slides.\n\n\nheight\n“475px”\nSpecifies the height of the embedded slide deck.\n\n\nfull-screen-link\n“true”\nAdd a link to view the embedded slide deck in a new full screen browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
     "crumbs": [
-      "Demos",
+      "Shortcodes",
       "RevealJS"
     ]
   },
