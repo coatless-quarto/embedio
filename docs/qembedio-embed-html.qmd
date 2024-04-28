@@ -1,0 +1,23 @@
+---
+title: "Embed HTML Webpage"
+---
+
+The `html` short code generates an embedded `<iframe>` area for HTML web pages. You can use it with:
+
+```markdown
+{{{< html file="assets/my-html-page.html" height="500px">}}}
+```
+
+For example, the above shortcode embeds the `my-html-page.html` in `assets/` as:
+
+{{< html file="assets/my-html-page.html" height="500px" >}}
+
+## Options
+
+| Keyword Argument | Default Value | Description                                              |
+|------------------|---------------|----------------------------------------------------------|
+| `file`           | None          | Specifies the input file path for the HTML webpage.      |
+| `height`         | "475px"       | Specifies the height of the embedded webpage.            |
+| `full-screen-link`    | "true"        | Add a link to view the embedded webpage in a new full screen browser window.         |
+
+You may also omit specifying a `file` option. We'll automatically use the first parameter as the `file`
