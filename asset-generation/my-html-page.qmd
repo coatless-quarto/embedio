@@ -1,0 +1,24 @@
+---
+title: "Example HTML Webpage"
+format: html
+embed-resources: true
+---
+
+## Welcome
+
+Hi! This is an embedded HTML webpage with `embedio`.
+
+## Some code
+
+```r
+1 + 1
+```
+
+## Math
+
+Display mode:
+
+$$c^2 = a^2 + b^2$$
+
+Inline mode: $x = 1 + 2$
+

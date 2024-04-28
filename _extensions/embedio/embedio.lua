@@ -64,42 +64,72 @@ local function ensureSlideCSSPresent()
   quarto.doc.include_text("in-header", slideCSS)
 end
 
-local function revealjs(args, kwargs, meta , raw_args)
-  
-  if not quarto.doc.is_format("html") then return end
+-- Define a function to generate HTML code for an iframe element
+local function iframe_helper(file_name, height, full_screen_link, template, type)
+  -- Check if the file exists
+  checkFile(file_name)
 
-  -- Enable CSS
-  ensureSlideCSSPresent()
+  -- Define a template for displaying a full-screen link
+  local template_full_screen = [[
+    <p><a href=%q target="_blank">View %s in full screen</a></p>
+  ]]
 
-  -- Supported options for now
-  
-  local slide_file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
-  checkFile(slide_file_name)
-
-  local height = getOption(kwargs, "height", "475px")
-
-  -- Check if "full-screen" parameter exists in kwargs
-  local full_screen_link = getOption(kwargs, "full-screen-link", "true")
-
-  -- HTML Template blocks
-  local template_revealjs = [[
-<div>
-<iframe class="slide-deck" src=%q height=%q></iframe>
-</div>
-]]
-  local template_revealjs_full_screen = [[
-  <p><a href=%q target="_blank">View slides in full screen</a></p>
-]]
-
-  -- Obtain the combined template
+  -- Combine the template with file name and height to generate HTML code
   local combined_str = string.format(
     [[%s %s]], 
-    (full_screen_link == "true" and string.format(template_revealjs_full_screen, slide_file_name) or ""), 
-    string.format(template_revealjs, slide_file_name, height)
+    -- Include full-screen link if specified
+    (full_screen_link == "true" and string.format(template_full_screen, file_name, type) or ""), 
+    -- Insert the iframe template with file name and height
+    string.format(template, file_name, height)
   )
   
-  -- Return as HTML block
+  -- Return the combined HTML as a pandoc RawBlock
   return pandoc.RawBlock('html', combined_str)
+end
+
+-- Define the html() function for embedding HTML files
+local function html(args, kwargs, meta, raw_args)
+  -- Check if the output format is HTML
+  if not quarto.doc.is_format("html") then return end
+  
+  -- Get the HTML file name, height, and full-screen link option
+  local file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
+  local height = getOption(kwargs, "height", "475px")
+  local full_screen_link = getOption(kwargs, "full-screen-link", "true")
+
+  -- Define the template for embedding HTML files
+  local template_html = [[
+    <div>
+      <iframe src=%q height=%q></iframe>
+    </div>
+  ]]
+
+  -- Call the iframe_helper() function with the HTML template
+  return iframe_helper(file_name, height, full_screen_link, template_html, "webpage")
+end
+
+-- Define the revealjs() function for embedding Reveal.js slides
+local function revealjs(args, kwargs, meta, raw_args)
+  -- Check if the output format is HTML
+  if not quarto.doc.is_format("html") then return end
+
+  -- Ensure that the Reveal.js CSS is present
+  ensureSlideCSSPresent()
+
+  -- Get the slide file name, height, and full-screen link option
+  local file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
+  local height = getOption(kwargs, "height", "475px")
+  local full_screen_link = getOption(kwargs, "full-screen-link", "true")
+
+  -- Define the template for embedding Reveal.js slides
+  local template_revealjs = [[
+    <div>
+      <iframe class="slide-deck" src=%q height=%q></iframe>
+    </div>
+  ]]
+
+  -- Call the iframe_helper() function with the Reveal.js template
+  return iframe_helper(file_name, height, full_screen_link, template_revealjs, "slides")
 end
 
 local function audio(args, kwargs, meta)
@@ -199,5 +229,6 @@ end
 return {
   ['audio'] = audio,
   ['pdf'] = pdf,
-  ["revealjs"] = revealjs
+  ['revealjs'] = revealjs,
+  ['html'] = html
 }
