@@ -25,7 +25,8 @@ website:
           href: qembedio-embed-revealjs.qmd
         - text: "Audio"
           href: qembedio-embed-audio.qmd
-        # - text: "HTML"
+        - text: "HTML"
+          href: qembedio-embed-html.qmd
         # - text: "Maps"
         # - text: "Social"
       - section: "Support"

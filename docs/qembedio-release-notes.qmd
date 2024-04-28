@@ -17,6 +17,12 @@ format:
 ## Changes
 
 - Refactored `revealjs` to use a general `iframe_helper`. ([#6](https://github.com/coatless-quarto/embedio/pull/6))
+- Added `make help` target to the Makefile and improved recipes. ([#7](https://github.com/coatless-quarto/embedio/pull/7))
+
+## Documentation
+
+- Added `html` documentation page to index. ([#8](https://github.com/coatless-quarto/embedio/pull/8))
+- Cleaned up documentation for existing shortcodes. ([#8](https://github.com/coatless-quarto/embedio/pull/8))
 
 # 0.0.1: If It Fits, I Sits (04-22-2024)
 

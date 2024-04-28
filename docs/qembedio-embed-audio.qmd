@@ -8,7 +8,7 @@ The `audio` short code generates an embedded audio object for HTML websites. You
 {{{< audio file="assets/my-audio.mp3" caption="Sample Audio File">}}}
 ```
 
-For example, the above shortcode embeds the `my-audio.mp3` in `assets/`  with:
+For example, the above shortcode embeds the `my-audio.mp3` in `assets/`  as:
 
 {{< audio file="assets/my-audio.mp3" caption="Sample Audio File" >}}
 
