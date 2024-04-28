@@ -4,7 +4,7 @@
     "href": "qembedio-release-notes.html",
     "title": "Release Notes",
     "section": "",
-    "text": "html: Include an HTML file inside of an iframe (#6)\n\n\n\n\n\nRefactored revealjs to use a general iframe_helper. (#6)",
+    "text": "html: Include an HTML file inside of an iframe (#6)\n\n\n\n\n\nRefactored revealjs to use a general iframe_helper. (#6)\nAdded make help target to the Makefile and improved recipes. (#7)\n\n\n\n\n\nAdded html documentation page to index. (#8)\nCleaned up documentation for existing shortcodes. (#8)",
     "crumbs": [
       "Extra",
       "Release Notes"
@@ -26,7 +26,18 @@
     "href": "qembedio-release-notes.html#changes",
     "title": "Release Notes",
     "section": "",
-    "text": "Refactored revealjs to use a general iframe_helper. (#6)",
+    "text": "Refactored revealjs to use a general iframe_helper. (#6)\nAdded make help target to the Makefile and improved recipes. (#7)",
+    "crumbs": [
+      "Extra",
+      "Release Notes"
+    ]
+  },
+  {
+    "objectID": "qembedio-release-notes.html#documentation",
+    "href": "qembedio-release-notes.html#documentation",
+    "title": "Release Notes",
+    "section": "",
+    "text": "Added html documentation page to index. (#8)\nCleaned up documentation for existing shortcodes. (#8)",
     "crumbs": [
       "Extra",
       "Release Notes"
@@ -70,7 +81,7 @@
     "href": "qembedio-embed-audio.html",
     "title": "Embed Audio",
     "section": "",
-    "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-audio.mp3 in assets/ with:",
+    "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-audio.mp3 in assets/ as:",
     "crumbs": [
       "Shortcodes",
       "Audio"
@@ -202,21 +213,29 @@
     "href": "qembedio-embed-html.html",
     "title": "Embed HTML Webpage",
     "section": "",
-    "text": "The html short code generates an embedded &lt;iframe&gt; area for HTML web pages. You can use it with:\nFor example, the above shortcode embeds the my-html-page.html in assets/ as:\nView webpage in full screen"
+    "text": "The html short code generates an embedded &lt;iframe&gt; area for HTML web pages. You can use it with:\nFor example, the above shortcode embeds the my-html-page.html in assets/ as:\nView webpage in full screen",
+    "crumbs": [
+      "Shortcodes",
+      "HTML"
+    ]
   },
   {
     "objectID": "qembedio-embed-html.html#options",
     "href": "qembedio-embed-html.html#options",
     "title": "Embed HTML Webpage",
     "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the HTML webpage.\n\n\nheight\n“475px”\nSpecifies the height of the embedded webpage.\n\n\nfull-screen-link\n“true”\nAdd a link to view the embedded webpage in a new full screen browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file"
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the HTML webpage.\n\n\nheight\n“475px”\nSpecifies the height of the embedded webpage.\n\n\nfull-screen-link\n“true”\nAdd a link to view the embedded webpage in a new full screen browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
+    "crumbs": [
+      "Shortcodes",
+      "HTML"
+    ]
   },
   {
     "objectID": "qembedio-embed-revealjs.html",
     "href": "qembedio-embed-revealjs.html",
     "title": "Embed RevealJS Slides",
     "section": "",
-    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-revealjs-slides.html in assets/ as:\nView slides in full screen",
+    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for RevealJS HTML Slides. You can use it with:\nFor example, the above shortcode embeds the my-revealjs-slides.html in assets/ as:\nView slides in full screen",
     "crumbs": [
       "Shortcodes",
       "RevealJS"
