@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>embedio – Embed RevealJS Slides</title>
+<title>embedio – Embed HTML Webpage</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,14 +100,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
- 
-  <style>
-  .slide-deck {
-      border: 3px solid #dee2e6;
-      width: 100%;
-  }
-  </style>
-  
 
 
 </head>
@@ -121,7 +113,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./qembedio-embed-pdf.html">Shortcodes</a></li><li class="breadcrumb-item"><a href="./qembedio-embed-revealjs.html">RevealJS</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      embedio
+      </li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -177,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qembedio-embed-revealjs.html" class="sidebar-item-text sidebar-link active">
+  <a href="./qembedio-embed-revealjs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RevealJS</span></a>
   </div>
 </li>
@@ -241,14 +235,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#options" id="toc-options" class="nav-link active" data-scroll-target="#options">Options</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/coatless-quarto/embedio/edit/main/qembedio-embed-revealjs.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/coatless-quarto/embedio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/coatless-quarto/embedio/edit/main/qembedio-embed-html.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/coatless-quarto/embedio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./qembedio-embed-pdf.html">Shortcodes</a></li><li class="breadcrumb-item"><a href="./qembedio-embed-revealjs.html">RevealJS</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Embed RevealJS Slides</h1>
+<h1 class="title">Embed HTML Webpage</h1>
 </div>
 
 
@@ -265,12 +259,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The <code>revealjs</code> short code generates an embedded <code>&lt;iframe&gt;</code> area for HTML websites. You can use it with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; revealjs file="assets/my-revealjs-slides.html" height="500px"&gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For example, the above shortcode embeds the <code>my-revealjs-slides.html</code> in <code>assets/</code> as:</p>
-    <p><a href="assets/my-revealjs-slides.html" target="_blank">View slides in full screen</a></p>
+<p>The <code>html</code> short code generates an embedded <code>&lt;iframe&gt;</code> area for HTML web pages. You can use it with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; html file="assets/my-html-page.html" height="500px"&gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For example, the above shortcode embeds the <code>my-html-page.html</code> in <code>assets/</code> as:</p>
+    <p><a href="assets/my-html-page.html" target="_blank">View webpage in full screen</a></p>
        <div>
-      <iframe class="slide-deck" src="assets/my-revealjs-slides.html" height="500px"></iframe>
+      <iframe src="assets/my-html-page.html" height="500px"></iframe>
     </div>
   
 <section id="options" class="level2">
@@ -292,17 +286,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td><code>file</code></td>
 <td>None</td>
-<td>Specifies the input file path for the Reveal.js slides.</td>
+<td>Specifies the input file path for the HTML webpage.</td>
 </tr>
 <tr class="even">
 <td><code>height</code></td>
 <td>“475px”</td>
-<td>Specifies the height of the embedded slide deck.</td>
+<td>Specifies the height of the embedded webpage.</td>
 </tr>
 <tr class="odd">
 <td><code>full-screen-link</code></td>
 <td>“true”</td>
-<td>Add a link to view the embedded slide deck in a new full screen browser window.</td>
+<td>Add a link to view the embedded webpage in a new full screen browser window.</td>
 </tr>
 </tbody>
 </table>
@@ -737,4 +731,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/coatless-quarto/embedio/edit/main/qembedio-embed-revealjs.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/coatless-quarto/embedio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/coatless-quarto/embedio/edit/main/qembedio-embed-html.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/coatless-quarto/embedio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

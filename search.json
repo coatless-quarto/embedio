@@ -4,7 +4,7 @@
     "href": "qembedio-release-notes.html",
     "title": "Release Notes",
     "section": "",
-    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides\naudio: Include an Audio file",
+    "text": "html: Include an HTML file inside of an iframe (#6)\n\n\n\n\n\nRefactored revealjs to use a general iframe_helper. (#6)",
     "crumbs": [
       "Extra",
       "Release Notes"
@@ -15,7 +15,29 @@
     "href": "qembedio-release-notes.html#features",
     "title": "Release Notes",
     "section": "",
-    "text": "embedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides\naudio: Include an Audio file",
+    "text": "html: Include an HTML file inside of an iframe (#6)",
+    "crumbs": [
+      "Extra",
+      "Release Notes"
+    ]
+  },
+  {
+    "objectID": "qembedio-release-notes.html#changes",
+    "href": "qembedio-release-notes.html#changes",
+    "title": "Release Notes",
+    "section": "",
+    "text": "Refactored revealjs to use a general iframe_helper. (#6)",
+    "crumbs": [
+      "Extra",
+      "Release Notes"
+    ]
+  },
+  {
+    "objectID": "qembedio-release-notes.html#features-1",
+    "href": "qembedio-release-notes.html#features-1",
+    "title": "Release Notes",
+    "section": "Features",
+    "text": "Features\n\nembedio shortcode options to add different pieces of content to Quarto HTML websites, documents, and books.\n\npdf: Include a PDF file\nrevealjs: Include RevealJS slides\naudio: Include an Audio file",
     "crumbs": [
       "Extra",
       "Release Notes"
@@ -174,6 +196,20 @@
       "Support",
       "FAQ"
     ]
+  },
+  {
+    "objectID": "qembedio-embed-html.html",
+    "href": "qembedio-embed-html.html",
+    "title": "Embed HTML Webpage",
+    "section": "",
+    "text": "The html short code generates an embedded &lt;iframe&gt; area for HTML web pages. You can use it with:\nFor example, the above shortcode embeds the my-html-page.html in assets/ as:\nView webpage in full screen"
+  },
+  {
+    "objectID": "qembedio-embed-html.html#options",
+    "href": "qembedio-embed-html.html#options",
+    "title": "Embed HTML Webpage",
+    "section": "Options",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the HTML webpage.\n\n\nheight\n“475px”\nSpecifies the height of the embedded webpage.\n\n\nfull-screen-link\n“true”\nAdd a link to view the embedded webpage in a new full screen browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file"
   },
   {
     "objectID": "qembedio-embed-revealjs.html",
