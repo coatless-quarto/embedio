@@ -2,7 +2,7 @@
 title: "Embed RevealJS Slides"
 ---
 
-The `revealjs` short code generates an embedded `<iframe>` area for HTML websites. You can use it with:
+The `revealjs` short code generates an embedded `<iframe>` area for RevealJS HTML Slides. You can use it with:
 
 ```markdown
 {{{< revealjs file="assets/my-revealjs-slides.html" height="500px">}}}
