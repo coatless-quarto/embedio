@@ -1,4 +1,4 @@
-# embedio Embedding Shortcode Extension for Quarto HTML Documents
+# embedio: Shortcodes for Embedding in Quarto <img src="logo-embedio.png" align ="right" alt="" width ="150"/>
 
 The `embedio` shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto's shortcode mechanism. The shortcodes expand out to be valid HTML.
 
@@ -25,6 +25,7 @@ We presently support the following shortcodes:
 | `audio`    | Embeds an audio player with optional caption and download link. |
 | `pdf`      | Embeds a PDF file with customizable width and height.           |
 | `revealjs` | Embeds a Reveal.js slide deck with optional height.             |
+| `html`     | Embeds an HTML webpage with customizable width and height.      |
 
 You can use the shortcode immediately in a Quarto project that has the extension installed by typing into the document:
 
