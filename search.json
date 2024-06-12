@@ -55,6 +55,50 @@
     ]
   },
   {
+    "objectID": "qembedio-embed-audio.html",
+    "href": "qembedio-embed-audio.html",
+    "title": "Embed Audio",
+    "section": "",
+    "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-audio.mp3 in assets/ as:",
+    "crumbs": [
+      "Shortcodes",
+      "Audio"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-audio.html#options",
+    "href": "qembedio-embed-audio.html#options",
+    "title": "Embed Audio",
+    "section": "Options",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\n\"\"\nSpecifies the input file path for the audio element.\n\n\ncaption\n\"\"\nSpecifies the caption for the audio element.\n\n\nclass\n\"\"\nSpecifies the class attribute for the figure element.\n\n\ndownload-link\n\"false\"\nSpecifies whether to include a download link.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
+    "crumbs": [
+      "Shortcodes",
+      "Audio"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-revealjs.html",
+    "href": "qembedio-embed-revealjs.html",
+    "title": "Embed RevealJS Slides",
+    "section": "",
+    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for RevealJS HTML Slides. You can use it with:\nFor example, the above shortcode embeds the my-revealjs-slides.html in assets/ as:\nView slides in full screen",
+    "crumbs": [
+      "Shortcodes",
+      "RevealJS"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-revealjs.html#options",
+    "href": "qembedio-embed-revealjs.html#options",
+    "title": "Embed RevealJS Slides",
+    "section": "Options",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the Reveal.js slides.\n\n\nheight\n“475px”\nSpecifies the height of the embedded slide deck.\n\n\nfull-screen-link\n“true”\nAdd a link to view the embedded slide deck in a new full screen browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
+    "crumbs": [
+      "Shortcodes",
+      "RevealJS"
+    ]
+  },
+  {
     "objectID": "qembedio-embed-pdf.html",
     "href": "qembedio-embed-pdf.html",
     "title": "Embed PDF",
@@ -77,25 +121,33 @@
     ]
   },
   {
-    "objectID": "qembedio-embed-audio.html",
-    "href": "qembedio-embed-audio.html",
-    "title": "Embed Audio",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
     "section": "",
-    "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-audio.mp3 in assets/ as:",
+    "text": "The embedio shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto’s shortcode mechanism.",
     "crumbs": [
-      "Shortcodes",
-      "Audio"
+      "Home"
     ]
   },
   {
-    "objectID": "qembedio-embed-audio.html#options",
-    "href": "qembedio-embed-audio.html#options",
-    "title": "Embed Audio",
-    "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\n\"\"\nSpecifies the input file path for the audio element.\n\n\ncaption\n\"\"\nSpecifies the caption for the audio element.\n\n\nclass\n\"\"\nSpecifies the class attribute for the figure element.\n\n\ndownload-link\n\"false\"\nSpecifies whether to include a download link.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "Home",
+    "section": "Installation",
+    "text": "Installation\nTo install the embedio shortcode extension, follow these steps:\n\nOpen your terminal.\nExecute the following command:\n\nquarto add coatless-quarto/embedio\nThis command will download and install the shortcode extension under the _extensions subdirectory of your Quarto project. If you are using version control, ensure that you include this directory in your repository.",
     "crumbs": [
-      "Shortcodes",
-      "Audio"
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "Home",
+    "section": "Usage",
+    "text": "Usage\nWe presently support the following shortcodes:\n\n\n\nShortcode\nDescription\n\n\n\n\naudio\nEmbeds an audio player with optional caption and download link.\n\n\npdf\nEmbeds a PDF file with customizable width and height.\n\n\nrevealjs\nEmbeds a Reveal.js slide deck with optional height.\n\n\n\nYou can use the shortcode immediately in a Quarto project that has the extension installed by typing into the document:\n{{&lt; shortcode-name filename &gt;}}\nFor example, we can embed RevealJS slides using:",
+    "crumbs": [
+      "Home"
     ]
   },
   {
@@ -228,58 +280,6 @@
     "crumbs": [
       "Shortcodes",
       "HTML"
-    ]
-  },
-  {
-    "objectID": "qembedio-embed-revealjs.html",
-    "href": "qembedio-embed-revealjs.html",
-    "title": "Embed RevealJS Slides",
-    "section": "",
-    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for RevealJS HTML Slides. You can use it with:\nFor example, the above shortcode embeds the my-revealjs-slides.html in assets/ as:\nView slides in full screen",
-    "crumbs": [
-      "Shortcodes",
-      "RevealJS"
-    ]
-  },
-  {
-    "objectID": "qembedio-embed-revealjs.html#options",
-    "href": "qembedio-embed-revealjs.html#options",
-    "title": "Embed RevealJS Slides",
-    "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the Reveal.js slides.\n\n\nheight\n“475px”\nSpecifies the height of the embedded slide deck.\n\n\nfull-screen-link\n“true”\nAdd a link to view the embedded slide deck in a new full screen browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file",
-    "crumbs": [
-      "Shortcodes",
-      "RevealJS"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "The embedio shortcode extension allows you to incorporate different file types into Quarto HTML documents by using Quarto’s shortcode mechanism.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#installation",
-    "href": "index.html#installation",
-    "title": "Home",
-    "section": "Installation",
-    "text": "Installation\nTo install the embedio shortcode extension, follow these steps:\n\nOpen your terminal.\nExecute the following command:\n\nquarto add coatless-quarto/embedio\nThis command will download and install the shortcode extension under the _extensions subdirectory of your Quarto project. If you are using version control, ensure that you include this directory in your repository.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#usage",
-    "href": "index.html#usage",
-    "title": "Home",
-    "section": "Usage",
-    "text": "Usage\nWe presently support the following shortcodes:\n\n\n\nShortcode\nDescription\n\n\n\n\naudio\nEmbeds an audio player with optional caption and download link.\n\n\npdf\nEmbeds a PDF file with customizable width and height.\n\n\nrevealjs\nEmbeds a Reveal.js slide deck with optional height.\n\n\n\nYou can use the shortcode immediately in a Quarto project that has the extension installed by typing into the document:\n{{&lt; shortcode-name filename &gt;}}\nFor example, we can embed RevealJS slides using:",
-    "crumbs": [
-      "Home"
     ]
   }
 ]
