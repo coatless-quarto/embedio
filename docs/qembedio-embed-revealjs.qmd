@@ -5,12 +5,12 @@ title: "Embed RevealJS Slides"
 The `revealjs` short code generates an embedded `<iframe>` area for RevealJS HTML Slides. You can use it with:
 
 ```markdown
-{{{< revealjs file="assets/my-revealjs-slides.html" height="500px">}}}
+{{{< revealjs file="assets/my-revealjs-slides.html" height="500px" class="ratio ratio-16x9" >}}}
 ```
 
 For example, the above shortcode embeds the `my-revealjs-slides.html` in `assets/` as:
 
-{{< revealjs file="assets/my-revealjs-slides.html" height="500px" >}}
+{{< revealjs file="assets/my-revealjs-slides.html" height="500px" class="ratio ratio-16x9" >}}
 
 ## Options
 
@@ -19,5 +19,6 @@ For example, the above shortcode embeds the `my-revealjs-slides.html` in `assets
 | `file`           | None          | Specifies the input file path for the Reveal.js slides.  |
 | `height`         | "475px"       | Specifies the height of the embedded slide deck.         |
 | `full-screen-link`    | "true"        | Add a link to view the embedded slide deck in a new full screen browser window.         |
+| `class`          | None          | Specifies the classes of the container wrapping the embedded slide deck.          |
 
 You may also omit specifying a `file` option. We'll automatically use the first parameter as the `file`
