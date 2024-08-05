@@ -69,6 +69,12 @@ local function iframe_helper(file_name, height, full_screen_link, class, templat
   -- Check if the file exists
   checkFile(file_name)
 
+  if isVariablePopulated(class) then
+    class = ' class="' .. class .. '"'
+  else
+    class = ""
+  end
+
   -- Define a template for displaying a full-screen link
   local template_full_screen = [[
     <p><a href=%q target="_blank">View %s in full screen</a></p>
