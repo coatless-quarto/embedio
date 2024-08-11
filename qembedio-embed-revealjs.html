@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.45">
+<meta name="generator" content="quarto-1.6.4">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -272,10 +272,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>The <code>revealjs</code> short code generates an embedded <code>&lt;iframe&gt;</code> area for RevealJS HTML Slides. You can use it with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; revealjs file="assets/my-revealjs-slides.html" height="500px"&gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; revealjs file="assets/my-revealjs-slides.html" height="500px" class="ratio ratio-16x9" &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For example, the above shortcode embeds the <code>my-revealjs-slides.html</code> in <code>assets/</code> as:</p>
     <p><a href="assets/my-revealjs-slides.html" target="_blank">View slides in full screen</a></p>
-       <div>
+       <div class="ratio ratio-16x9">
       <iframe class="slide-deck" src="assets/my-revealjs-slides.html" height="500px"></iframe>
     </div>
   
@@ -309,6 +309,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><code>full-screen-link</code></td>
 <td>“true”</td>
 <td>Add a link to view the embedded slide deck in a new full screen browser window.</td>
+</tr>
+<tr class="even">
+<td><code>class</code></td>
+<td>None</td>
+<td>Specifies the classes of the container wrapping the embedded slide deck.</td>
 </tr>
 </tbody>
 </table>
