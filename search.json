@@ -145,7 +145,7 @@
     "href": "index.html#usage",
     "title": "Home",
     "section": "Usage",
-    "text": "Usage\nWe presently support the following shortcodes:\n\n\n\nShortcode\nDescription\n\n\n\n\naudio\nEmbeds an audio player with optional caption and download link.\n\n\npdf\nEmbeds a PDF file with customizable width and height.\n\n\nrevealjs\nEmbeds a Reveal.js slide deck with optional height.\n\n\n\nYou can use the shortcode immediately in a Quarto project that has the extension installed by typing into the document:\n{{&lt; shortcode-name filename &gt;}}\nFor example, we can embed RevealJS slides using:\n{{&lt; revealjs \"assets/my-slides.html\" &gt;}}",
+    "text": "Usage\nWe presently support the following shortcodes:\n\n\n\nShortcode\nDescription\n\n\n\n\naudio\nEmbeds an audio player with optional caption and download link.\n\n\npdf\nEmbeds a PDF file with customizable width and height.\n\n\nrevealjs\nEmbeds a Reveal.js slide deck with optional width and height.\n\n\nhtml\nEmbeds an HTML file with customizable width and height.\n\n\n\nYou can use the shortcode immediately in a Quarto project that has the extension installed by typing into the document:\n{{&lt; shortcode-name filename &gt;}}\nFor example, we can embed RevealJS slides using:\n{{&lt; revealjs \"assets/my-slides.html\" &gt;}}",
     "crumbs": [
       "Home"
     ]
