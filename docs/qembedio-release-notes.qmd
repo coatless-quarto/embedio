@@ -13,6 +13,7 @@ format:
 ## Features
 
 - `html`: Include an HTML file inside of an iframe ([#6](https://github.com/coatless-quarto/embedio/pull/6))
+- `html` and `revealjs`: Specify width for the iframe ([#13](https://github.com/coatless-quarto/embedio/pull/13))
 
 ## Changes
 

@@ -55,7 +55,6 @@ local function ensureSlideCSSPresent()
   <style>
   .slide-deck {
       border: 3px solid #dee2e6;
-      width: 100%;
   }
   </style>
   ]]
@@ -65,7 +64,7 @@ local function ensureSlideCSSPresent()
 end
 
 -- Define a function to generate HTML code for an iframe element
-local function iframe_helper(file_name, height, full_screen_link, class, template, type)
+local function iframe_helper(file_name, height, width, full_screen_link, class, template, type)
   -- Check if the file exists
   checkFile(file_name)
 
@@ -86,7 +85,7 @@ local function iframe_helper(file_name, height, full_screen_link, class, templat
     -- Include full-screen link if specified
     (full_screen_link == "true" and string.format(template_full_screen, file_name, type) or ""), 
     -- Insert the iframe template with file name and height
-    string.format(template, class, file_name, height)
+    string.format(template, class, file_name, height, width)
   )
   
   -- Return the combined HTML as a pandoc RawBlock
@@ -101,18 +100,19 @@ local function html(args, kwargs, meta, raw_args)
   -- Get the HTML file name, height, and full-screen link option
   local file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
   local height = getOption(kwargs, "height", "475px")
+  local width = getOption(kwargs, "width", "100%")
   local full_screen_link = getOption(kwargs, "full-screen-link", "true")
   local class = getOption(kwargs, "class", "")
 
   -- Define the template for embedding HTML files
   local template_html = [[
     <div%s>
-      <iframe src=%q height=%q></iframe>
+      <iframe src=%q height=%q width=%q></iframe>
     </div>
   ]]
 
   -- Call the iframe_helper() function with the HTML template
-  return iframe_helper(file_name, height, full_screen_link, class, template_html, "webpage")
+  return iframe_helper(file_name, height, width, full_screen_link, class, template_html, "webpage")
 end
 
 -- Define the revealjs() function for embedding Reveal.js slides
@@ -126,18 +126,19 @@ local function revealjs(args, kwargs, meta, raw_args)
   -- Get the slide file name, height, and full-screen link option
   local file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
   local height = getOption(kwargs, "height", "475px")
+  local width = getOption(kwargs, "width", "100%")
   local full_screen_link = getOption(kwargs, "full-screen-link", "true")
   local class = getOption(kwargs, "class", "")
 
   -- Define the template for embedding Reveal.js slides
   local template_revealjs = [[
     <div%s>
-      <iframe class="slide-deck" src=%q height=%q></iframe>
+      <iframe class="slide-deck" src=%q height=%q width=%q></iframe>
     </div>
   ]]
 
   -- Call the iframe_helper() function with the Reveal.js template
-  return iframe_helper(file_name, height, full_screen_link, class, template_revealjs, "slides")
+  return iframe_helper(file_name, height, width, full_screen_link, class, template_revealjs, "slides")
 end
 
 local function audio(args, kwargs, meta)
