@@ -24,7 +24,7 @@ We presently support the following shortcodes:
 |------------|-----------------------------------------------------------------|
 | `audio`    | Embeds an audio player with optional caption and download link. |
 | `pdf`      | Embeds a PDF file with customizable width and height.           |
-| `revealjs` | Embeds a Reveal.js slide deck with optional height.             |
+| `revealjs` | Embeds a Reveal.js slide deck with optional width and height.   |
 | `html`     | Embeds an HTML webpage with customizable width and height.      |
 
 You can use the shortcode immediately in a Quarto project that has the extension installed by typing into the document:

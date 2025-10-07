@@ -29,7 +29,9 @@ We presently support the following shortcodes:
 |------------|-----------------------------------------------------------------|
 | [`audio`](qembedio-embed-audio.qmd)    | Embeds an audio player with optional caption and download link. |
 | [`pdf`](qembedio-embed-pdf.qmd)      | Embeds a PDF file with customizable width and height.           |
-| [`revealjs`](qembedio-embed-revealjs.qmd) | Embeds a Reveal.js slide deck with optional height.             |
+| [`revealjs`](qembedio-embed-revealjs.qmd) | Embeds a Reveal.js slide deck with optional width and height.             |
+| [`html`](qembedio-embed-html.qmd) | Embeds an HTML file with customizable width and height.             |
+
 
 You can use the shortcode immediately in a Quarto project that has the extension installed by typing into the document:
 
