@@ -40,5 +40,5 @@ You can use the shortcode immediately in a Quarto project that has the extension
 For example, we can embed RevealJS slides using:
 
 ```md
-{{< revealjs "assets/my-slides.html" >}}
+{{{< revealjs "assets/my-slides.html" >}}}
 ```
