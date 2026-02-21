@@ -1,27 +1,27 @@
 {
   "Embed Audio": {
-    "prefix": "embedio-audio",
+    "prefix": "audio",
     "body": [
       "{{< audio ${1:path/to/audio.mp3} >}}"
     ],
     "description": "Embed an audio file with an HTML audio player."
   },
   "Embed PDF": {
-    "prefix": "embedio-pdf",
+    "prefix": "pdf",
     "body": [
       "{{< pdf ${1:path/to/file.pdf} >}}"
     ],
     "description": "Embed a PDF file inline."
   },
   "Embed RevealJS Slides": {
-    "prefix": "embedio-revealjs",
+    "prefix": "revealjs",
     "body": [
       "{{< revealjs ${1:path/to/slides.html} >}}"
     ],
     "description": "Embed a RevealJS slide deck in an iframe."
   },
   "Embed HTML": {
-    "prefix": "embedio-html",
+    "prefix": "html",
     "body": [
       "{{< html ${1:path/to/page.html} >}}"
     ],
