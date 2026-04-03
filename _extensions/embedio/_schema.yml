@@ -1,0 +1,107 @@
+$schema: https://m.canouil.dev/quarto-wizard/assets/schema/v1/extension-schema.json
+
+shortcodes:
+  audio:
+    description: "Embed an audio file with an HTML audio player."
+    arguments:
+      - name: file
+        type: string
+        required: true
+        description: "Path to the audio file."
+        completion:
+          type: file
+    attributes:
+      caption:
+        type: string
+        description: "Caption text displayed below the audio player."
+      class:
+        type: string
+        description: "CSS class for the wrapping figure element."
+      download-link:
+        type: boolean
+        default: false
+        description: "Show a download link above the audio player."
+  pdf:
+    description: "Embed a PDF file inline."
+    arguments:
+      - name: file
+        type: string
+        required: true
+        description: "Path to the PDF file."
+        completion:
+          type: file
+    attributes:
+      height:
+        type: string
+        default: 600px
+        description: "Height of the embedded PDF viewer."
+        completion:
+          type: size
+      width:
+        type: string
+        default: 100%
+        description: "Width of the embedded PDF viewer."
+        completion:
+          type: size
+      download-link:
+        type: boolean
+        default: true
+        description: "Show a download link above the PDF."
+  revealjs:
+    description: "Embed a RevealJS slide deck in an iframe."
+    arguments:
+      - name: file
+        type: string
+        required: true
+        description: "Path to the RevealJS HTML file."
+        completion:
+          type: file
+    attributes:
+      height:
+        type: string
+        default: 475px
+        description: "Height of the iframe."
+        completion:
+          type: size
+      width:
+        type: string
+        default: 100%
+        description: "Width of the iframe."
+        completion:
+          type: size
+      full-screen-link:
+        type: boolean
+        default: true
+        description: "Show a link to view slides in full screen."
+      class:
+        type: string
+        description: "CSS class for the wrapping div element."
+  html:
+    description: "Embed an HTML page in an iframe."
+    arguments:
+      - name: file
+        type: string
+        required: true
+        description: "Path or URL of the HTML page."
+        completion:
+          type: file
+    attributes:
+      height:
+        type: string
+        default: 475px
+        description: "Height of the iframe."
+        completion:
+          type: size
+      width:
+        type: string
+        default: 100%
+        description: "Width of the iframe."
+        completion:
+          type: size
+      full-screen-link:
+        type: boolean
+        default: true
+        description: "Show a link to view the page in full screen."
+      class:
+        type: string
+        description: "CSS class for the wrapping div element."
