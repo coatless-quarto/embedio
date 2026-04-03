@@ -51,17 +51,20 @@ end
 
 -- Register a local file as a Quarto resource so it is copied to the output
 local function ensureResource(file_path)
-  if not file_path or isRemoteRef(file_path) then
+  if isVariableEmpty(file_path) or isRemoteRef(file_path) then
     return
   end
 
+  -- Strip query strings and fragments (e.g. audio.mp3#t=10)
+  local resource_path = file_path:match("^[^%?#]+") or file_path
+
   -- Resolve to an absolute path based on the input document's directory
   local abs_path
-  if file_path:find("^/") then
-    abs_path = file_path
+  if pandoc.path.is_absolute(resource_path) then
+    abs_path = resource_path
   else
     local doc_dir = pandoc.path.directory(quarto.doc.input_file)
-    abs_path = pandoc.path.normalize(pandoc.path.join({doc_dir, file_path}))
+    abs_path = pandoc.path.normalize(pandoc.path.join({doc_dir, resource_path}))
   end
 
   quarto.doc.add_resource(abs_path)
