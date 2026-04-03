@@ -63,6 +63,7 @@ format:
   html:
     resources:
     - path/to/file.pdf
+    - path/to/audio.mp3
 ---
 ```
 
