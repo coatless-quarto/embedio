@@ -52,14 +52,16 @@ For more details, please see [Demo: RevealJS](qembedio-embed-revealjs.qmd).
 
 If you're experiencing difficulties with file embedding, first ensure that your Quarto project has the `embedio` shortcode extension installed by looking in the `_extensions` folder. 
 
-Next, make sure that the resource is specified in the `resources` key under the publishing format: 
+Starting with v0.0.3, the `embedio` shortcodes automatically register embedded files as Quarto resources, so they are copied to the output directory without any extra configuration.
+
+If you are using an older version of the extension (or need to include files that are _not_ referenced by a shortcode), you can manually declare them in the `resources` key under the publishing format:
 
 ```yaml
 ---
 title: Example resource inclusion
 format:
-  html: 
-    resources: 
+  html:
+    resources:
     - path/to/file.pdf
 ---
 ```
