@@ -42,6 +42,31 @@ local function checkFile(input)
   end
 end
 
+-- Check if a path is a remote reference (URL, data URI, or anchor)
+local function isRemoteRef(path)
+  return path:find("^%a+://") ~= nil or
+         path:find("^data:") ~= nil or
+         path:find("^#") ~= nil
+end
+
+-- Register a local file as a Quarto resource so it is copied to the output
+local function ensureResource(file_path)
+  if not file_path or isRemoteRef(file_path) then
+    return
+  end
+
+  -- Resolve to an absolute path based on the input document's directory
+  local abs_path
+  if file_path:find("^/") then
+    abs_path = file_path
+  else
+    local doc_dir = pandoc.path.directory(quarto.doc.input_file)
+    abs_path = pandoc.path.normalize(pandoc.path.join({doc_dir, file_path}))
+  end
+
+  quarto.doc.add_resource(abs_path)
+end
+
 -- Avoid duplicate class definitions
 local initializedSlideCSS = false
 
@@ -104,6 +129,9 @@ local function html(args, kwargs, meta, raw_args)
   local full_screen_link = getOption(kwargs, "full-screen-link", "true")
   local class = getOption(kwargs, "class", "")
 
+  -- Ensure file is copied to the output directory
+  ensureResource(file_name)
+
   -- Define the template for embedding HTML files
   local template_html = [[
     <div%s>
@@ -129,6 +157,9 @@ local function revealjs(args, kwargs, meta, raw_args)
   local width = getOption(kwargs, "width", "100%")
   local full_screen_link = getOption(kwargs, "full-screen-link", "true")
   local class = getOption(kwargs, "class", "")
+
+  -- Ensure file is copied to the output directory
+  ensureResource(file_name)
 
   -- Define the template for embedding Reveal.js slides
   local template_revealjs = [[
@@ -156,6 +187,9 @@ local function audio(args, kwargs, meta)
   -- Extracting input from args or kwargs
   local input = pandoc.utils.stringify(args[1] or kwargs.file)
   checkFile(input)
+
+  -- Ensure file is copied to the output directory
+  ensureResource(input)
 
   -- Add class attribute if provided
   if class then
@@ -208,7 +242,10 @@ local function pdf(args, kwargs, meta)
   -- Supported options for now
   local pdf_file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
   checkFile(pdf_file_name)
-  
+
+  -- Ensure file is copied to the output directory
+  ensureResource(pdf_file_name)
+
   local height = getOption(kwargs, "height", "600px")
   local width = getOption(kwargs, "width", "100%")
   local download_link = getOption(kwargs, "download-link", "true")
