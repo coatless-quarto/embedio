@@ -22,3 +22,7 @@ For example, the above shortcode embeds the `my-audio.mp3` in `assets/`  as:
 | `download-link`       | `"false"`     | Specifies whether to include a download link.         |
 
 You may also omit specifying a `file` option. We'll automatically use the first parameter as the `file`
+
+:::{.callout-tip}
+Having trouble with files not appearing in the rendered output? See the [troubleshooting section](qembedio-faq.qmd#im-encountering-issues-with-embedding-files.-what-should-i-do) of the FAQ.
+:::

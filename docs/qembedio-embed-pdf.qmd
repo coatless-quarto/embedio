@@ -22,3 +22,7 @@ For example, the above shortcode embeds the `my-pdf-file.pdf` in `assets/` as:
 | `download-link`    | "true"        | Add a link to download the embedded PDF in a new browser window.         |
 
 You may also omit specifying a `file` option. We'll automatically use the first parameter as the `file`
+
+:::{.callout-tip}
+Having trouble with files not appearing in the rendered output? See the [troubleshooting section](qembedio-faq.qmd#im-encountering-issues-with-embedding-files.-what-should-i-do) of the FAQ.
+:::

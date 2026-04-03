@@ -23,3 +23,7 @@ For example, the above shortcode embeds the `my-html-page.html` in `assets/` as:
 | `class`          | None          | Specifies the classes of the container wrapping the embedded webpage. |
 
 You may also omit specifying a `file` option. We'll automatically use the first parameter as the `file`
+
+:::{.callout-tip}
+Having trouble with files not appearing in the rendered output? See the [troubleshooting section](qembedio-faq.qmd#im-encountering-issues-with-embedding-files.-what-should-i-do) of the FAQ.
+:::
