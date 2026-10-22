@@ -22,7 +22,7 @@ See the [home page](index.qmd) for details.
 
 ## Is the embedio shortcode extension compatible with all Quarto versions?
 
-The `embedio` short code extension requires Quarto v1.4.549 or later.
+The `embedio` short code extension requires Quarto v1.10.0 or later.
 
 # Supported File Types
 
