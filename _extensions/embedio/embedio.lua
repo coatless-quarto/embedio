@@ -1,54 +1,37 @@
--- Check if variable missing or an empty string
-local function isVariableEmpty(s)
-  return s == nil or s == ''
-end
+---@alias ShortcodeArgs string[] Positional shortcode arguments
+---@alias ShortcodeKwargs table<string, string|pandoc.Inlines> Named shortcode arguments (a missing key reads as empty Inlines)
 
--- Check if variable is present
-local function isVariablePopulated(s)
-  return not isVariableEmpty(s)
-end
+---@class IframeOptions
+---@field label string What the full-screen link calls the embedded file
+---@field iframe_class? string Class for the `<iframe>` element
+---@field setup? fun() Runs before the embed is built
 
--- Check whether an argument is present in kwargs
--- If it is, return the value
-local function tryOption(options, key)
-
-  -- Protect against an empty options
-  if not (options and options[key]) then
-      return nil
+-- Retrieve an option as a string, or the default when it is missing or empty
+---@overload fun(kwargs: ShortcodeKwargs, key: string): string?
+---@param kwargs ShortcodeKwargs
+---@param key string
+---@param default string
+---@return string
+local function getOption(kwargs, key, default)
+  local value = kwargs[key] ~= nil and pandoc.utils.stringify(kwargs[key]) or ""
+  if value == "" then
+    return default
   end
-
-  -- Retrieve the option
-  local option_value = pandoc.utils.stringify(options[key])
-  -- Verify the option's value exists, return value otherwise nil.
-  if isVariablePopulated(option_value) then
-      return option_value
-  else
-      return nil
-  end
-end
-
--- Retrieve the option value or use the default value
-local function getOption(options, key, default)
-  return tryOption(options, key) or default
+  return value
 end
 
 -- Escape a value for use inside a double-quoted HTML attribute
+---@param s string
+---@return string
 local function escapeAttr(s)
   return (s:gsub('[&<>"\']', {
     ['&'] = '&amp;', ['<'] = '&lt;', ['>'] = '&gt;', ['"'] = '&quot;', ["'"] = '&#39;'
   }))
 end
 
--- Validate input file path is not empty, stopping the render otherwise.
--- Quarto replaces `error` inside shortcodes with a logger that lets the
--- render continue, so raise through `assert` instead.
-local function checkFile(input, shortcode)
-  assert(isVariablePopulated(input),
-    "embedio: the " .. shortcode .. " shortcode needs a file path. " ..
-    "Pass it as the first argument or as file=\"...\".")
-end
-
 -- Check if a path is a remote reference (URL, data URI, or anchor)
+---@param path string
+---@return boolean
 local function isRemoteRef(path)
   return path:find("^%a+://") ~= nil or
          path:find("^data:") ~= nil or
@@ -56,8 +39,9 @@ local function isRemoteRef(path)
 end
 
 -- Register a local file as a Quarto resource so it is copied to the output
+---@param file_path string
 local function ensureResource(file_path)
-  if isVariableEmpty(file_path) or isRemoteRef(file_path) then
+  if file_path == "" or isRemoteRef(file_path) then
     return
   end
 
@@ -74,6 +58,25 @@ local function ensureResource(file_path)
   end
 
   quarto.doc.add_resource(abs_path)
+end
+
+-- Read the file path from the first argument or `file`, and register it as a
+-- resource. Stops the render when there is no path. Quarto replaces `error`
+-- inside shortcodes with a logger that lets the render continue, so raise
+-- through `assert` instead.
+---@param args ShortcodeArgs
+---@param kwargs ShortcodeKwargs
+---@param shortcode string Shortcode name for the error message
+---@return string
+local function getFilePath(args, kwargs, shortcode)
+  local file_path = pandoc.utils.stringify(args[1] or kwargs["file"])
+  assert(file_path ~= "",
+    "embedio: the " .. shortcode .. " shortcode needs a file path. " ..
+    "Pass it as the first argument or as file=\"...\".")
+
+  -- Ensure file is copied to the output directory
+  ensureResource(file_path)
+  return file_path
 end
 
 -- Avoid duplicate class definitions
@@ -97,107 +100,79 @@ local function ensureSlideCSSPresent()
   quarto.doc.include_text("in-header", slideCSS)
 end
 
--- Define a function to generate HTML code for an iframe element
-local function iframe_helper(file_name, height, width, full_screen_link, class, template, type)
-  if isVariablePopulated(class) then
-    class = ' class="' .. escapeAttr(class) .. '"'
-  else
-    class = ""
-  end
-
-  -- Define a template for displaying a full-screen link
-  local template_full_screen = [[
+-- Template for displaying a full-screen link
+local template_full_screen = [[
     <p><a href="%s" target="_blank">View %s in full screen</a></p>
   ]]
 
-  -- Combine the template with file name and height to generate HTML code
-  local combined_str = string.format(
-    [[%s %s]], 
-    -- Include full-screen link if specified
-    (full_screen_link == "true" and string.format(template_full_screen, escapeAttr(file_name), type) or ""), 
-    -- Insert the iframe template with file name and height
-    string.format(template, class, escapeAttr(file_name), escapeAttr(height), escapeAttr(width))
-  )
-  
-  -- Return the combined HTML as a pandoc RawBlock
-  return pandoc.RawBlock('html', combined_str)
-end
-
--- Define the html() function for embedding HTML files
-local function html(args, kwargs, meta, raw_args)
-  -- Check if the output format is HTML
-  if not quarto.doc.is_format("html") then return end
-  
-  -- Get the HTML file name, height, and full-screen link option
-  local file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
-  checkFile(file_name, "html")
-  local height = getOption(kwargs, "height", "475px")
-  local width = getOption(kwargs, "width", "100%")
-  local full_screen_link = getOption(kwargs, "full-screen-link", "true")
-  local class = getOption(kwargs, "class", "")
-
-  -- Ensure file is copied to the output directory
-  ensureResource(file_name)
-
-  -- Define the template for embedding HTML files
-  local template_html = [[
+-- Template for the iframe and the div that wraps it
+local template_iframe = [[
     <div%s>
-      <iframe src="%s" height="%s" width="%s"></iframe>
+      <iframe%s src="%s" height="%s" width="%s"></iframe>
     </div>
   ]]
 
-  -- Call the iframe_helper() function with the HTML template
-  return iframe_helper(file_name, height, width, full_screen_link, class, template_html, "webpage")
+-- Build a shortcode that embeds a file in an iframe (`html` and `revealjs`)
+---@param shortcode string
+---@param options IframeOptions
+---@return fun(args: ShortcodeArgs, kwargs: ShortcodeKwargs): pandoc.RawBlock?
+local function iframeShortcode(shortcode, options)
+  local iframe_class = options.iframe_class and (' class="' .. options.iframe_class .. '"') or ""
+
+  return function(args, kwargs)
+    -- Check if the output format is HTML
+    if not quarto.doc.is_format("html") then return end
+
+    if options.setup then options.setup() end
+
+    -- Get the file name, size, full-screen link option, and wrapper class
+    local file_name = escapeAttr(getFilePath(args, kwargs, shortcode))
+    local height = getOption(kwargs, "height", "475px")
+    local width = getOption(kwargs, "width", "100%")
+    local full_screen_link = getOption(kwargs, "full-screen-link", "true")
+    local class = getOption(kwargs, "class")
+    local div_class = class and (' class="' .. escapeAttr(class) .. '"') or ""
+
+    -- Combine the full-screen link (if requested) with the iframe
+    local combined_str = string.format(
+      [[%s %s]],
+      (full_screen_link == "true" and string.format(template_full_screen, file_name, options.label) or ""),
+      string.format(template_iframe, div_class, iframe_class, file_name, escapeAttr(height), escapeAttr(width))
+    )
+
+    -- Return the combined HTML as a pandoc RawBlock
+    return pandoc.RawBlock('html', combined_str)
+  end
 end
 
--- Define the revealjs() function for embedding Reveal.js slides
-local function revealjs(args, kwargs, meta, raw_args)
-  -- Check if the output format is HTML
-  if not quarto.doc.is_format("html") then return end
+-- Embed an HTML file
+local html = iframeShortcode("html", { label = "webpage" })
 
-  -- Ensure that the Reveal.js CSS is present
-  ensureSlideCSSPresent()
+-- Embed Reveal.js slides
+local revealjs = iframeShortcode("revealjs", {
+  label = "slides",
+  iframe_class = "slide-deck",
+  setup = ensureSlideCSSPresent
+})
 
-  -- Get the slide file name, height, and full-screen link option
-  local file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
-  checkFile(file_name, "revealjs")
-  local height = getOption(kwargs, "height", "475px")
-  local width = getOption(kwargs, "width", "100%")
-  local full_screen_link = getOption(kwargs, "full-screen-link", "true")
-  local class = getOption(kwargs, "class", "")
-
-  -- Ensure file is copied to the output directory
-  ensureResource(file_name)
-
-  -- Define the template for embedding Reveal.js slides
-  local template_revealjs = [[
-    <div%s>
-      <iframe class="slide-deck" src="%s" height="%s" width="%s"></iframe>
-    </div>
-  ]]
-
-  -- Call the iframe_helper() function with the Reveal.js template
-  return iframe_helper(file_name, height, width, full_screen_link, class, template_revealjs, "slides")
-end
-
-local function audio(args, kwargs, meta)
+-- Embed an audio player
+---@param args ShortcodeArgs
+---@param kwargs ShortcodeKwargs
+---@return pandoc.RawBlock?
+local function audio(args, kwargs)
 
   if not quarto.doc.is_format("html") then return end
 
   -- Start of HTML tag
-  local htmlTable = {"<figure"} 
+  local htmlTable = {"<figure"}
 
   -- Extracting caption, class, and download from kwargs
-  local caption = tryOption(kwargs, "caption")
-  local class = tryOption(kwargs, "class")
+  local caption = getOption(kwargs, "caption")
+  local class = getOption(kwargs, "class")
   local download_link = getOption(kwargs, "download-link", "false")
 
   -- Extracting input from args or kwargs
-  local input = pandoc.utils.stringify(args[1] or kwargs.file)
-  checkFile(input, "audio")
-
-  -- Ensure file is copied to the output directory
-  ensureResource(input)
+  local input = escapeAttr(getFilePath(args, kwargs, "audio"))
 
   -- Add class attribute if provided
   if class then
@@ -207,19 +182,13 @@ local function audio(args, kwargs, meta)
 
   -- Add download link if provided
   if download_link == "true" then
-    table.insert(htmlTable, '<p><a href="' .. escapeAttr(input) ..'"> Download audio file</a></p><br />')
+    table.insert(htmlTable, '<p><a href="' .. input ..'"> Download audio file</a></p><br />')
   end
 
-  -- Start the audio tag
-  table.insert(htmlTable, "<audio controls")
-
-  -- Add source attribute with input file path
-  table.insert(htmlTable, ' src="' .. escapeAttr(input) .. '">')
-
-  -- Add source element for browsers that do not support the audio tag
+  -- Add the audio tag with the input file path, and a fallback message for
+  -- browsers that do not support it
+  table.insert(htmlTable, '<audio controls src="' .. input .. '">')
   table.insert(htmlTable, 'Your browser does not support the audio tag.')
-
-  -- Add closing audio tag
   table.insert(htmlTable, "</audio>")
 
   -- Add caption if provided
@@ -233,18 +202,16 @@ local function audio(args, kwargs, meta)
   return pandoc.RawBlock('html', table.concat(htmlTable))
 end
 
-
-local function pdf(args, kwargs, meta)
+-- Embed a PDF file
+---@param args ShortcodeArgs
+---@param kwargs ShortcodeKwargs
+---@return pandoc.RawBlock?
+local function pdf(args, kwargs)
 
   if not quarto.doc.is_format("html") then return end
 
   -- Supported options for now
-  local pdf_file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
-  checkFile(pdf_file_name, "pdf")
-
-  -- Ensure file is copied to the output directory
-  ensureResource(pdf_file_name)
-
+  local pdf_src = escapeAttr(getFilePath(args, kwargs, "pdf"))
   local height = getOption(kwargs, "height", "600px")
   local width = getOption(kwargs, "width", "100%")
   local download_link = getOption(kwargs, "download-link", "true")
@@ -261,10 +228,9 @@ local function pdf(args, kwargs, meta)
 ]]
 
   -- Obtain the combined template
-  local pdf_src = escapeAttr(pdf_file_name)
   local combined_str = string.format(
-    [[%s %s]], 
-    (download_link == "true" and string.format(template_pdf_download_link, pdf_src) or ""), 
+    [[%s %s]],
+    (download_link == "true" and string.format(template_pdf_download_link, pdf_src) or ""),
     string.format(template_pdf, pdf_src, escapeAttr(width), escapeAttr(height), pdf_src)
   )
 
