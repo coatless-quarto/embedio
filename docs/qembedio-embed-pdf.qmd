@@ -17,7 +17,7 @@ For example, the above shortcode embeds the `my-pdf-file.pdf` in `assets/` as:
 | Keyword Argument | Default Value | Description                                              |
 |-------------------|---------------|----------------------------------------------------------|
 | `file`            | None          | Specifies the input PDF file path.                       |
-| `height`          | "850px"       | Specifies the height of the embedded PDF object.         |
+| `height`          | "600px"       | Specifies the height of the embedded PDF object.         |
 | `width`           | "100%"        | Specifies the width of the embedded PDF object.          |
 | `download-link`    | "true"        | Add a link to download the embedded PDF in a new browser window.         |
 

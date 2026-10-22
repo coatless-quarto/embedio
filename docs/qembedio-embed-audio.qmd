@@ -16,7 +16,7 @@ For example, the above shortcode embeds the `my-audio.mp3` in `assets/`  as:
 
 | Keyword Argument | Default Value | Description                                           |
 |------------------|---------------|-------------------------------------------------------|
-| `file`           | `""`          | Specifies the input file path for the audio element.  |
+| `file`           | None          | Specifies the input file path for the audio element.  |
 | `caption`        | `""`          | Specifies the caption for the audio element.          |
 | `class`          | `""`          | Specifies the class attribute for the figure element. |
 | `download-link`       | `"false"`     | Specifies whether to include a download link.         |
