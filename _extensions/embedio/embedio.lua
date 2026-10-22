@@ -32,6 +32,13 @@ local function getOption(options, key, default)
   return tryOption(options, key) or default
 end
 
+-- Escape a value for use inside a double-quoted HTML attribute
+local function escapeAttr(s)
+  return (s:gsub('[&<>"\']', {
+    ['&'] = '&amp;', ['<'] = '&lt;', ['>'] = '&gt;', ['"'] = '&quot;', ["'"] = '&#39;'
+  }))
+end
+
 -- Validate input file path is not empty
 local function checkFile(input)
   if input then
@@ -97,23 +104,23 @@ local function iframe_helper(file_name, height, width, full_screen_link, class, 
   checkFile(file_name)
 
   if isVariablePopulated(class) then
-    class = ' class="' .. class .. '"'
+    class = ' class="' .. escapeAttr(class) .. '"'
   else
     class = ""
   end
 
   -- Define a template for displaying a full-screen link
   local template_full_screen = [[
-    <p><a href=%q target="_blank">View %s in full screen</a></p>
+    <p><a href="%s" target="_blank">View %s in full screen</a></p>
   ]]
 
   -- Combine the template with file name and height to generate HTML code
   local combined_str = string.format(
     [[%s %s]], 
     -- Include full-screen link if specified
-    (full_screen_link == "true" and string.format(template_full_screen, file_name, type) or ""), 
+    (full_screen_link == "true" and string.format(template_full_screen, escapeAttr(file_name), type) or ""), 
     -- Insert the iframe template with file name and height
-    string.format(template, class, file_name, height, width)
+    string.format(template, class, escapeAttr(file_name), escapeAttr(height), escapeAttr(width))
   )
   
   -- Return the combined HTML as a pandoc RawBlock
@@ -138,7 +145,7 @@ local function html(args, kwargs, meta, raw_args)
   -- Define the template for embedding HTML files
   local template_html = [[
     <div%s>
-      <iframe src=%q height=%q width=%q></iframe>
+      <iframe src="%s" height="%s" width="%s"></iframe>
     </div>
   ]]
 
@@ -167,7 +174,7 @@ local function revealjs(args, kwargs, meta, raw_args)
   -- Define the template for embedding Reveal.js slides
   local template_revealjs = [[
     <div%s>
-      <iframe class="slide-deck" src=%q height=%q width=%q></iframe>
+      <iframe class="slide-deck" src="%s" height="%s" width="%s"></iframe>
     </div>
   ]]
 
@@ -196,19 +203,19 @@ local function audio(args, kwargs, meta)
 
   -- Add class attribute if provided
   if class then
-      table.insert(htmlTable, 'class="' .. class .. '">')
+      table.insert(htmlTable, 'class="' .. escapeAttr(class) .. '">')
   end
 
   -- Add download link if provided
   if download_link == "true" then
-    table.insert(htmlTable, '<p><a href="' .. input ..'"> Download audio file</a></p><br />')
+    table.insert(htmlTable, '<p><a href="' .. escapeAttr(input) ..'"> Download audio file</a></p><br />')
   end
 
   -- Start the audio tag
   table.insert(htmlTable, "<audio controls")
 
   -- Add source attribute with input file path
-  table.insert(htmlTable, ' src="' .. input .. '"')
+  table.insert(htmlTable, ' src="' .. escapeAttr(input) .. '"')
 
   -- Automatically detect file type from the file extension
   local fileType = string.match(input, "%.([^%.]+)$")
@@ -255,20 +262,21 @@ local function pdf(args, kwargs, meta)
 
   -- HTML block
   local template_pdf = [[
-  <object data=%q type="application/pdf" width=%q height=%q>
-    <p>Unable to display PDF file. <a href=%q>Download</a> instead.</p>
+  <object data="%s" type="application/pdf" width="%s" height="%s">
+    <p>Unable to display PDF file. <a href="%s">Download</a> instead.</p>
   </object>
   ]]
 
   local template_pdf_download_link = [[
-  <p><a href=%q target="_blank">Download PDF File</a></p>
+  <p><a href="%s" target="_blank">Download PDF File</a></p>
 ]]
 
   -- Obtain the combined template
+  local pdf_src = escapeAttr(pdf_file_name)
   local combined_str = string.format(
     [[%s %s]], 
-    (download_link == "true" and string.format(template_pdf_download_link, pdf_file_name) or ""), 
-    string.format(template_pdf, pdf_file_name, width, height, pdf_file_name)
+    (download_link == "true" and string.format(template_pdf_download_link, pdf_src) or ""), 
+    string.format(template_pdf, pdf_src, escapeAttr(width), escapeAttr(height), pdf_src)
   )
 
   -- Return as HTML block
