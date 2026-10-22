@@ -39,14 +39,13 @@ local function escapeAttr(s)
   }))
 end
 
--- Validate input file path is not empty
-local function checkFile(input)
-  if input then
-    return true
-  else
-    quarto.log.error("Error: file path is required for the embedio shortcode.")
-    assert(false)
-  end
+-- Validate input file path is not empty, stopping the render otherwise.
+-- Quarto replaces `error` inside shortcodes with a logger that lets the
+-- render continue, so raise through `assert` instead.
+local function checkFile(input, shortcode)
+  assert(isVariablePopulated(input),
+    "embedio: the " .. shortcode .. " shortcode needs a file path. " ..
+    "Pass it as the first argument or as file=\"...\".")
 end
 
 -- Check if a path is a remote reference (URL, data URI, or anchor)
@@ -100,9 +99,6 @@ end
 
 -- Define a function to generate HTML code for an iframe element
 local function iframe_helper(file_name, height, width, full_screen_link, class, template, type)
-  -- Check if the file exists
-  checkFile(file_name)
-
   if isVariablePopulated(class) then
     class = ' class="' .. escapeAttr(class) .. '"'
   else
@@ -134,6 +130,7 @@ local function html(args, kwargs, meta, raw_args)
   
   -- Get the HTML file name, height, and full-screen link option
   local file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
+  checkFile(file_name, "html")
   local height = getOption(kwargs, "height", "475px")
   local width = getOption(kwargs, "width", "100%")
   local full_screen_link = getOption(kwargs, "full-screen-link", "true")
@@ -163,6 +160,7 @@ local function revealjs(args, kwargs, meta, raw_args)
 
   -- Get the slide file name, height, and full-screen link option
   local file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
+  checkFile(file_name, "revealjs")
   local height = getOption(kwargs, "height", "475px")
   local width = getOption(kwargs, "width", "100%")
   local full_screen_link = getOption(kwargs, "full-screen-link", "true")
@@ -196,7 +194,7 @@ local function audio(args, kwargs, meta)
 
   -- Extracting input from args or kwargs
   local input = pandoc.utils.stringify(args[1] or kwargs.file)
-  checkFile(input)
+  checkFile(input, "audio")
 
   -- Ensure file is copied to the output directory
   ensureResource(input)
@@ -251,7 +249,7 @@ local function pdf(args, kwargs, meta)
 
   -- Supported options for now
   local pdf_file_name = pandoc.utils.stringify(args[1] or kwargs["file"])
-  checkFile(pdf_file_name)
+  checkFile(pdf_file_name, "pdf")
 
   -- Ensure file is copied to the output directory
   ensureResource(pdf_file_name)
