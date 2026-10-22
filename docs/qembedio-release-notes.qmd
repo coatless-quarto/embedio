@@ -10,10 +10,22 @@ format:
 
 # 0.0.2-dev.1: ???? (??-??-????)
 
+## Breaking changes
+
+- embedio now requires Quarto 1.10 or later.
+
 ## Features
 
 - `html`: Include an HTML file inside of an iframe ([#6](https://github.com/coatless-quarto/embedio/pull/6))
 - `html` and `revealjs`: Specify width for the iframe ([#13](https://github.com/coatless-quarto/embedio/pull/13))
+
+## Bug fixes
+
+- `audio`, `pdf`, `revealjs`, and `html` copy the embedded file to the output directory automatically, so it no longer needs to be listed under `resources`. ([#16](https://github.com/coatless-quarto/embedio/pull/16))
+- `audio`, `pdf`, `revealjs`, and `html` stop the render with an error that names the shortcode when no file is given. Previously, `pdf`, `revealjs`, and `html` silently embedded an empty frame, and `audio` failed with "assertion failed!".
+- embedio escapes file paths, sizes, and classes in the HTML it writes. Previously, a file name with a double quote broke the embed, and some non-ASCII file names were garbled.
+- `audio` adds a `<figcaption>` and a `class` only when `caption` and `class` are set, and no longer writes an invalid `type` attribute on `<audio>`. Audio files and URLs without a file extension now work; previously they stopped the render.
+- `audio`, `pdf`, `revealjs`, and `html` produce no output in non-HTML formats such as PDF, Typst, Word and Markdown. Previously, any document that used them failed to render to those formats with "Cannot get Attr from TypeNil".
 
 ## Changes
 
@@ -24,6 +36,7 @@ format:
 
 - Added `html` documentation page to index. ([#8](https://github.com/coatless-quarto/embedio/pull/8))
 - Cleaned up documentation for existing shortcodes. ([#8](https://github.com/coatless-quarto/embedio/pull/8))
+- The `pdf` page lists the correct default `height`, `600px`. Previously it said `850px`.
 
 # 0.0.1: If It Fits, I Sits (04-22-2024)
 
