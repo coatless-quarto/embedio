@@ -185,11 +185,11 @@ local function audio(args, kwargs, meta)
   if not quarto.doc.is_format("html") then return end
 
   -- Start of HTML tag
-  local htmlTable = {"<figure "} 
+  local htmlTable = {"<figure"} 
 
   -- Extracting caption, class, and download from kwargs
-  local caption = pandoc.utils.stringify(kwargs.caption)
-  local class = pandoc.utils.stringify(kwargs.class)
+  local caption = tryOption(kwargs, "caption")
+  local class = tryOption(kwargs, "class")
   local download_link = getOption(kwargs, "download-link", "false")
 
   -- Extracting input from args or kwargs
@@ -201,8 +201,9 @@ local function audio(args, kwargs, meta)
 
   -- Add class attribute if provided
   if class then
-      table.insert(htmlTable, 'class="' .. escapeAttr(class) .. '">')
+      table.insert(htmlTable, ' class="' .. escapeAttr(class) .. '"')
   end
+  table.insert(htmlTable, ">")
 
   -- Add download link if provided
   if download_link == "true" then
@@ -213,17 +214,7 @@ local function audio(args, kwargs, meta)
   table.insert(htmlTable, "<audio controls")
 
   -- Add source attribute with input file path
-  table.insert(htmlTable, ' src="' .. escapeAttr(input) .. '"')
-
-  -- Automatically detect file type from the file extension
-  local fileType = string.match(input, "%.([^%.]+)$")
-  
-  if fileType then
-      table.insert(htmlTable, ' type="audio/' .. fileType .. '">')
-  else
-      quarto.log.error("Error: Unable to detect file type from the audio file path.")
-      assert(false)
-  end
+  table.insert(htmlTable, ' src="' .. escapeAttr(input) .. '">')
 
   -- Add source element for browsers that do not support the audio tag
   table.insert(htmlTable, 'Your browser does not support the audio tag.')
