@@ -115,13 +115,14 @@ local template_iframe = [[
 -- Build a shortcode that embeds a file in an iframe (`html` and `revealjs`)
 ---@param shortcode string
 ---@param options IframeOptions
----@return fun(args: ShortcodeArgs, kwargs: ShortcodeKwargs): pandoc.RawBlock?
+---@return fun(args: ShortcodeArgs, kwargs: ShortcodeKwargs): pandoc.RawBlock|pandoc.Blocks
 local function iframeShortcode(shortcode, options)
   local iframe_class = options.iframe_class and (' class="' .. options.iframe_class .. '"') or ""
 
   return function(args, kwargs)
-    -- Check if the output format is HTML
-    if not quarto.doc.is_format("html") then return end
+    -- Other formats get nothing. Returning nil instead makes Quarto print
+    -- "Shortcode not found" and then fail the render.
+    if not quarto.doc.is_format("html") then return pandoc.Blocks({}) end
 
     if options.setup then options.setup() end
 
@@ -158,10 +159,10 @@ local revealjs = iframeShortcode("revealjs", {
 -- Embed an audio player
 ---@param args ShortcodeArgs
 ---@param kwargs ShortcodeKwargs
----@return pandoc.RawBlock?
+---@return pandoc.RawBlock|pandoc.Blocks
 local function audio(args, kwargs)
 
-  if not quarto.doc.is_format("html") then return end
+  if not quarto.doc.is_format("html") then return pandoc.Blocks({}) end
 
   -- Start of HTML tag
   local htmlTable = {"<figure"}
@@ -205,10 +206,10 @@ end
 -- Embed a PDF file
 ---@param args ShortcodeArgs
 ---@param kwargs ShortcodeKwargs
----@return pandoc.RawBlock?
+---@return pandoc.RawBlock|pandoc.Blocks
 local function pdf(args, kwargs)
 
-  if not quarto.doc.is_format("html") then return end
+  if not quarto.doc.is_format("html") then return pandoc.Blocks({}) end
 
   -- Supported options for now
   local pdf_src = escapeAttr(getFilePath(args, kwargs, "pdf"))
