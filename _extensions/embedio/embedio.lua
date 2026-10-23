@@ -34,6 +34,7 @@ end
 ---@return boolean
 local function isRemoteRef(path)
   return path:find("^%a+://") ~= nil or
+         path:find("^//") ~= nil or
          path:find("^data:") ~= nil or
          path:find("^#") ~= nil
 end
@@ -60,19 +61,78 @@ local function ensureResource(file_path)
   quarto.doc.add_resource(abs_path)
 end
 
+-- Quarto renders these into a file of the same name, so `slides.html` next to
+-- `slides.qmd` counts as present before it is rendered
+local source_extensions = { ".qmd", ".ipynb", ".Rmd", ".rmd", ".md" }
+
+---@param path string
+---@return boolean
+local function fileExists(path)
+  local file = io.open(path, "r")
+  if file == nil then return false end
+  file:close()
+  return true
+end
+
+-- Check that a local file is there to embed; remote references are not
+-- checked. A root-relative path in a project (`/assets/page.html`) is also
+-- looked up from the project directory, as Quarto resolves it in websites.
+---@param file_path string
+---@return boolean
+local function fileFound(file_path)
+  if isRemoteRef(file_path) then return true end
+
+  -- Strip query strings and fragments (e.g. audio.mp3#t=10)
+  local path = file_path:match("^[^%?#]+") or file_path
+
+  local candidates = {}
+  if pandoc.path.is_absolute(path) then
+    table.insert(candidates, path)
+    local project_dir = quarto.project.directory
+    if project_dir then
+      table.insert(candidates, pandoc.path.join({project_dir, (path:gsub("^[/\\]+", ""))}))
+    end
+  else
+    table.insert(candidates, pandoc.path.join({pandoc.path.directory(quarto.doc.input_file), path}))
+  end
+
+  for _, candidate in ipairs(candidates) do
+    if fileExists(candidate) then return true end
+    local stem = pandoc.path.split_extension(candidate)
+    for _, ext in ipairs(source_extensions) do
+      if fileExists(stem .. ext) then return true end
+    end
+  end
+  return false
+end
+
+-- Template for the box shown in HTML in place of an embed whose file is missing
+local template_missing = [[
+<div class="embedio-missing" style="border: 2px dashed #dc3545; border-radius: 0.375rem; background: rgba(220, 53, 69, 0.08); padding: 0.75rem 1rem; margin: 1rem 0;"><strong>File not found:</strong> %s</div>
+]]
+
 -- Read the file path from the first argument or `file`, and register it as a
--- resource. Stops the render when there is no path. Quarto replaces `error`
--- inside shortcodes with a logger that lets the render continue, so raise
--- through `assert` instead.
+-- resource. When there is no path or the file is not there, warn and return a
+-- placeholder to show instead of the embed, so the rest of the page renders.
 ---@param args ShortcodeArgs
 ---@param kwargs ShortcodeKwargs
----@param shortcode string Shortcode name for the error message
----@return string
+---@param shortcode string Shortcode name for the warning and the placeholder
+---@return string file_path
+---@return pandoc.RawBlock? placeholder Set when the file is missing
 local function getFilePath(args, kwargs, shortcode)
   local file_path = pandoc.utils.stringify(args[1] or kwargs["file"])
-  assert(file_path ~= "",
-    "embedio: the " .. shortcode .. " shortcode needs a file path. " ..
-    "Pass it as the first argument or as file=\"...\".")
+  if file_path == "" then
+    quarto.log.warning("embedio: the " .. shortcode .. " shortcode needs a file path. " ..
+      "Pass it as the first argument or as file=\"...\". Showing a placeholder instead.")
+    return file_path, pandoc.RawBlock("html", string.format(template_missing,
+      "the <code>" .. shortcode .. "</code> shortcode has no file path."))
+  end
+  if not fileFound(file_path) then
+    quarto.log.warning("embedio: the " .. shortcode .. " shortcode can't find the file \"" ..
+      file_path .. "\". Showing a placeholder instead.")
+    return file_path, pandoc.RawBlock("html", string.format(template_missing,
+      "<code>" .. escapeAttr(file_path) .. "</code>"))
+  end
 
   -- Ensure file is copied to the output directory
   ensureResource(file_path)
@@ -127,7 +187,9 @@ local function iframeShortcode(shortcode, options)
     if options.setup then options.setup() end
 
     -- Get the file name, size, full-screen link option, and wrapper class
-    local file_name = escapeAttr(getFilePath(args, kwargs, shortcode))
+    local file_path, placeholder = getFilePath(args, kwargs, shortcode)
+    if placeholder then return placeholder end
+    local file_name = escapeAttr(file_path)
     local height = getOption(kwargs, "height", "475px")
     local width = getOption(kwargs, "width", "100%")
     local full_screen_link = getOption(kwargs, "full-screen-link", "true")
@@ -173,7 +235,9 @@ local function audio(args, kwargs)
   local download_link = getOption(kwargs, "download-link", "false")
 
   -- Extracting input from args or kwargs
-  local input = escapeAttr(getFilePath(args, kwargs, "audio"))
+  local file_path, placeholder = getFilePath(args, kwargs, "audio")
+  if placeholder then return placeholder end
+  local input = escapeAttr(file_path)
 
   -- Add class attribute if provided
   if class then
@@ -212,7 +276,9 @@ local function pdf(args, kwargs)
   if not quarto.doc.is_format("html") then return pandoc.Blocks({}) end
 
   -- Supported options for now
-  local pdf_src = escapeAttr(getFilePath(args, kwargs, "pdf"))
+  local file_path, placeholder = getFilePath(args, kwargs, "pdf")
+  if placeholder then return placeholder end
+  local pdf_src = escapeAttr(file_path)
   local height = getOption(kwargs, "height", "600px")
   local width = getOption(kwargs, "width", "100%")
   local download_link = getOption(kwargs, "download-link", "true")
