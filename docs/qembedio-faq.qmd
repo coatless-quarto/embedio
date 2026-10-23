@@ -40,8 +40,8 @@ Yes, the embed shortcode extension for Quarto enables the embedding of interacti
 
 Embedding an HTML slide is straightforward. Please use:
 
-```{=markdown}
-{{< revealjs file="path/to/slides.html" >}}
+```markdown
+{{{< revealjs file="path/to/slides.html" >}}}
 ```
 
 For more details, please see [Demo: RevealJS](qembedio-embed-revealjs.qmd).
