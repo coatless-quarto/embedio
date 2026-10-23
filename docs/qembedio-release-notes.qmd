@@ -23,7 +23,7 @@ format:
 
 - Embedded files are copied to the output automatically, so they no longer need to be listed under `resources`. ([#16](https://github.com/coatless-quarto/embedio/pull/16))
 - Documents that use embedio also render to PDF, Typst, Word and Markdown; the embeds appear in HTML.
-- File names with quotes or non-ASCII characters and audio files without an extension embed correctly, and a missing file gets a clear message.
+- File names with quotes or non-ASCII characters and audio files without an extension embed correctly, and a missing file shows a clear placeholder while the rest of the page renders.
 
 ## Changes
 
