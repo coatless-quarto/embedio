@@ -80,6 +80,12 @@ project:
 The asterisks, `*`, means to include all files within that directory.
 :::
 
+## What happens when an embedded file is missing?
+
+If a shortcode has no file path, or its file doesn't exist, embedio prints a warning during the render that names the shortcode and the path. In HTML output, a box saying "File not found" with the path takes the place of the embed, and the rest of the page renders as usual. Other formats don't show embeds, so nothing appears there.
+
+Paths are checked relative to the document, or to the project for a path that starts with `/`. URLs aren't checked. A file that Quarto renders in the same project, such as `slides.html` from `slides.qmd`, counts as present.
+
 ## Are there known compatibility issues with certain browsers?
 
 The are no known compatible with major browsers. However, if you encounter issues, please feel free to raise them in the project's issue tracker and consider updating your browser to the latest version.
