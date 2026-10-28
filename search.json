@@ -1,93 +1,5 @@
 [
   {
-    "objectID": "qembedio-embed-audio.html",
-    "href": "qembedio-embed-audio.html",
-    "title": "Embed Audio",
-    "section": "",
-    "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-audio.mp3 in assets/ as:",
-    "crumbs": [
-      "Shortcodes",
-      "Audio"
-    ]
-  },
-  {
-    "objectID": "qembedio-embed-audio.html#options",
-    "href": "qembedio-embed-audio.html#options",
-    "title": "Embed Audio",
-    "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\n\"\"\nSpecifies the input file path for the audio element.\n\n\ncaption\n\"\"\nSpecifies the caption for the audio element.\n\n\nclass\n\"\"\nSpecifies the class attribute for the figure element.\n\n\ndownload-link\n\"false\"\nSpecifies whether to include a download link.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
-    "crumbs": [
-      "Shortcodes",
-      "Audio"
-    ]
-  },
-  {
-    "objectID": "qembedio-embed-revealjs.html",
-    "href": "qembedio-embed-revealjs.html",
-    "title": "Embed RevealJS Slides",
-    "section": "",
-    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for RevealJS HTML Slides. You can use it with:\nFor example, the above shortcode embeds the my-revealjs-slides.html in assets/ as:\nView slides in full screen",
-    "crumbs": [
-      "Shortcodes",
-      "RevealJS"
-    ]
-  },
-  {
-    "objectID": "qembedio-embed-revealjs.html#options",
-    "href": "qembedio-embed-revealjs.html#options",
-    "title": "Embed RevealJS Slides",
-    "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the Reveal.js slides.\n\n\nheight\n“475px”\nSpecifies the height of the embedded slide deck.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded slide deck.\n\n\nfull-screen-link\n“true”\nAdd a link to view the embedded slide deck in a new full screen browser window.\n\n\nclass\nNone\nSpecifies the classes of the container wrapping the embedded slide deck.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
-    "crumbs": [
-      "Shortcodes",
-      "RevealJS"
-    ]
-  },
-  {
-    "objectID": "qembedio-embed-html.html",
-    "href": "qembedio-embed-html.html",
-    "title": "Embed HTML Webpage",
-    "section": "",
-    "text": "The html short code generates an embedded &lt;iframe&gt; area for HTML web pages. You can use it with:\nFor example, the above shortcode embeds the my-html-page.html in assets/ as:\nView webpage in full screen",
-    "crumbs": [
-      "Shortcodes",
-      "HTML"
-    ]
-  },
-  {
-    "objectID": "qembedio-embed-html.html#options",
-    "href": "qembedio-embed-html.html#options",
-    "title": "Embed HTML Webpage",
-    "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the HTML webpage.\n\n\nheight\n“475px”\nSpecifies the height of the embedded webpage.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded webpage.\n\n\nfull-screen-link\n“true”\nAdd a link to view the embedded webpage in a new full screen browser window.\n\n\nclass\nNone\nSpecifies the classes of the container wrapping the embedded webpage.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
-    "crumbs": [
-      "Shortcodes",
-      "HTML"
-    ]
-  },
-  {
-    "objectID": "qembedio-embed-pdf.html",
-    "href": "qembedio-embed-pdf.html",
-    "title": "Embed PDF",
-    "section": "",
-    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-pdf-file.pdf in assets/ as:\nDownload PDF File",
-    "crumbs": [
-      "Shortcodes",
-      "PDF"
-    ]
-  },
-  {
-    "objectID": "qembedio-embed-pdf.html#options",
-    "href": "qembedio-embed-pdf.html#options",
-    "title": "Embed PDF",
-    "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input PDF file path.\n\n\nheight\n“850px”\nSpecifies the height of the embedded PDF object.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded PDF object.\n\n\ndownload-link\n“true”\nAdd a link to download the embedded PDF in a new browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
-    "crumbs": [
-      "Shortcodes",
-      "PDF"
-    ]
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Home",
@@ -170,6 +82,28 @@
     "crumbs": [
       "Extra",
       "Release Notes"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-audio.html",
+    "href": "qembedio-embed-audio.html",
+    "title": "Embed Audio",
+    "section": "",
+    "text": "The audio short code generates an embedded audio object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-audio.mp3 in assets/ as:",
+    "crumbs": [
+      "Shortcodes",
+      "Audio"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-audio.html#options",
+    "href": "qembedio-embed-audio.html#options",
+    "title": "Embed Audio",
+    "section": "Options",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\n\"\"\nSpecifies the input file path for the audio element.\n\n\ncaption\n\"\"\nSpecifies the caption for the audio element.\n\n\nclass\n\"\"\nSpecifies the class attribute for the figure element.\n\n\ndownload-link\n\"false\"\nSpecifies whether to include a download link.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
+    "crumbs": [
+      "Shortcodes",
+      "Audio"
     ]
   },
   {
@@ -280,6 +214,72 @@
     "crumbs": [
       "Support",
       "FAQ"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-revealjs.html",
+    "href": "qembedio-embed-revealjs.html",
+    "title": "Embed RevealJS Slides",
+    "section": "",
+    "text": "The revealjs short code generates an embedded &lt;iframe&gt; area for RevealJS HTML Slides. You can use it with:\nFor example, the above shortcode embeds the my-revealjs-slides.html in assets/ as:\nView slides in full screen",
+    "crumbs": [
+      "Shortcodes",
+      "RevealJS"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-revealjs.html#options",
+    "href": "qembedio-embed-revealjs.html#options",
+    "title": "Embed RevealJS Slides",
+    "section": "Options",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the Reveal.js slides.\n\n\nheight\n“475px”\nSpecifies the height of the embedded slide deck.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded slide deck.\n\n\nfull-screen-link\n“true”\nAdd a link to view the embedded slide deck in a new full screen browser window.\n\n\nclass\nNone\nSpecifies the classes of the container wrapping the embedded slide deck.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
+    "crumbs": [
+      "Shortcodes",
+      "RevealJS"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-html.html",
+    "href": "qembedio-embed-html.html",
+    "title": "Embed HTML Webpage",
+    "section": "",
+    "text": "The html short code generates an embedded &lt;iframe&gt; area for HTML web pages. You can use it with:\nFor example, the above shortcode embeds the my-html-page.html in assets/ as:\nView webpage in full screen",
+    "crumbs": [
+      "Shortcodes",
+      "HTML"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-html.html#options",
+    "href": "qembedio-embed-html.html#options",
+    "title": "Embed HTML Webpage",
+    "section": "Options",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the HTML webpage.\n\n\nheight\n“475px”\nSpecifies the height of the embedded webpage.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded webpage.\n\n\nfull-screen-link\n“true”\nAdd a link to view the embedded webpage in a new full screen browser window.\n\n\nclass\nNone\nSpecifies the classes of the container wrapping the embedded webpage.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
+    "crumbs": [
+      "Shortcodes",
+      "HTML"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-pdf.html",
+    "href": "qembedio-embed-pdf.html",
+    "title": "Embed PDF",
+    "section": "",
+    "text": "The pdf short code generates an embedded PDF object for HTML websites. You can use it with:\nFor example, the above shortcode embeds the my-pdf-file.pdf in assets/ as:\nDownload PDF File",
+    "crumbs": [
+      "Shortcodes",
+      "PDF"
+    ]
+  },
+  {
+    "objectID": "qembedio-embed-pdf.html#options",
+    "href": "qembedio-embed-pdf.html#options",
+    "title": "Embed PDF",
+    "section": "Options",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input PDF file path.\n\n\nheight\n“850px”\nSpecifies the height of the embedded PDF object.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded PDF object.\n\n\ndownload-link\n“true”\nAdd a link to download the embedded PDF in a new browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
+    "crumbs": [
+      "Shortcodes",
+      "PDF"
     ]
   }
 ]
