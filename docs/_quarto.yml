@@ -38,6 +38,8 @@ website:
       - section: "Extra"
         contents:
         - qembedio-release-notes.qmd
+        - href: https://blog.thecoatlessprofessor.com/projects/embedio/
+          text: "Blog posts"
 
 format: 
   html:
