@@ -34,7 +34,18 @@
     "href": "qembedio-release-notes.html",
     "title": "Release Notes",
     "section": "",
-    "text": "html: Include an HTML file inside of an iframe (#6)\nhtml and revealjs: Specify width for the iframe (#13)\n\n\n\n\n\nRefactored revealjs to use a general iframe_helper. (#6)\nAdded make help target to the Makefile and improved recipes. (#7)\n\n\n\n\n\nAdded html documentation page to index. (#8)\nCleaned up documentation for existing shortcodes. (#8)",
+    "text": "embedio now requires Quarto 1.11 or later.\n\n\n\n\n\nhtml: Include an HTML file inside of an iframe (#6)\nhtml and revealjs: Specify width for the iframe (#13)\n\n\n\n\n\nEmbedded files are copied to the output automatically, so they no longer need to be listed under resources. (#16)\nDocuments that use embedio also render to PDF, Typst, Word and Markdown; the embeds appear in HTML.\nFile names with quotes or non-ASCII characters and audio files without an extension embed correctly, and a missing file shows a clear placeholder while the rest of the page renders.\n\n\n\n\n\nRefactored revealjs to use a general iframe_helper. (#6)\nAdded make help target to the Makefile and improved recipes. (#7)\n\n\n\n\n\nAdded html documentation page to index. (#8)\nCleaned up documentation for existing shortcodes. (#8)",
+    "crumbs": [
+      "Extra",
+      "Release Notes"
+    ]
+  },
+  {
+    "objectID": "qembedio-release-notes.html#breaking-changes",
+    "href": "qembedio-release-notes.html#breaking-changes",
+    "title": "Release Notes",
+    "section": "",
+    "text": "embedio now requires Quarto 1.11 or later.",
     "crumbs": [
       "Extra",
       "Release Notes"
@@ -46,6 +57,17 @@
     "title": "Release Notes",
     "section": "",
     "text": "html: Include an HTML file inside of an iframe (#6)\nhtml and revealjs: Specify width for the iframe (#13)",
+    "crumbs": [
+      "Extra",
+      "Release Notes"
+    ]
+  },
+  {
+    "objectID": "qembedio-release-notes.html#bug-fixes",
+    "href": "qembedio-release-notes.html#bug-fixes",
+    "title": "Release Notes",
+    "section": "",
+    "text": "Embedded files are copied to the output automatically, so they no longer need to be listed under resources. (#16)\nDocuments that use embedio also render to PDF, Typst, Word and Markdown; the embeds appear in HTML.\nFile names with quotes or non-ASCII characters and audio files without an extension embed correctly, and a missing file shows a clear placeholder while the rest of the page renders.",
     "crumbs": [
       "Extra",
       "Release Notes"
@@ -100,7 +122,7 @@
     "href": "qembedio-embed-audio.html#options",
     "title": "Embed Audio",
     "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\n\"\"\nSpecifies the input file path for the audio element.\n\n\ncaption\n\"\"\nSpecifies the caption for the audio element.\n\n\nclass\n\"\"\nSpecifies the class attribute for the figure element.\n\n\ndownload-link\n\"false\"\nSpecifies whether to include a download link.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input file path for the audio element.\n\n\ncaption\n\"\"\nSpecifies the caption for the audio element.\n\n\nclass\n\"\"\nSpecifies the class attribute for the figure element.\n\n\ndownload-link\n\"false\"\nSpecifies whether to include a download link.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
     "crumbs": [
       "Shortcodes",
       "Audio"
@@ -144,7 +166,7 @@
     "href": "qembedio-faq.html#is-the-embedio-shortcode-extension-compatible-with-all-quarto-versions",
     "title": "Frequently Asked Questions",
     "section": "Is the embedio shortcode extension compatible with all Quarto versions?",
-    "text": "Is the embedio shortcode extension compatible with all Quarto versions?\nThe embedio short code extension requires Quarto v1.4.549 or later.",
+    "text": "Is the embedio shortcode extension compatible with all Quarto versions?\nThe embedio short code extension requires Quarto v1.11.0 or later.",
     "crumbs": [
       "Support",
       "FAQ"
@@ -177,7 +199,7 @@
     "href": "qembedio-faq.html#how-do-i-embed-an-html-slide-using-the-embedio-shortcode-extension-for-quarto",
     "title": "Frequently Asked Questions",
     "section": "How do I embed an HTML slide using the embedio shortcode extension for Quarto?",
-    "text": "How do I embed an HTML slide using the embedio shortcode extension for Quarto?\nEmbedding an HTML slide is straightforward. Please use:\nFor more details, please see Demo: RevealJS.",
+    "text": "How do I embed an HTML slide using the embedio shortcode extension for Quarto?\nEmbedding an HTML slide is straightforward. Please use:\n{{&lt; revealjs file=\"path/to/slides.html\" &gt;}}\nFor more details, please see Demo: RevealJS.",
     "crumbs": [
       "Support",
       "FAQ"
@@ -188,7 +210,18 @@
     "href": "qembedio-faq.html#im-encountering-issues-with-embedding-files.-what-should-i-do",
     "title": "Frequently Asked Questions",
     "section": "I’m encountering issues with embedding files. What should I do?",
-    "text": "I’m encountering issues with embedding files. What should I do?\nIf you’re experiencing difficulties with file embedding, first ensure that your Quarto project has the embedio shortcode extension installed by looking in the _extensions folder.\nStarting with v0.0.3, the embedio shortcodes automatically register embedded files as Quarto resources, so they are copied to the output directory without any extra configuration.\nIf you are using an older version of the extension (or need to include files that are not referenced by a shortcode), you can manually declare them in the resources key under the publishing format:\n---\ntitle: Example resource inclusion\nformat:\n  html:\n    resources:\n    - path/to/file.pdf\n    - path/to/audio.mp3\n---\nIf using a Quarto project with a _quarto.yml file, it is better practice to declare all assets in an assets directory under the resources key. For example, we have in our documentation website’s _quarto.yml file:\nproject:\n  type: website\n  resources:\n   - assets/*\n\n\n\n\n\n\nNote\n\n\n\nThe asterisks, *, means to include all files within that directory.",
+    "text": "I’m encountering issues with embedding files. What should I do?\nIf you’re experiencing difficulties with file embedding, first ensure that your Quarto project has the embedio shortcode extension installed by looking in the _extensions folder.\nStarting with v0.0.2, the embedio shortcodes automatically register embedded files as Quarto resources, so they are copied to the output directory without any extra configuration.\nIf you are using an older version of the extension (or need to include files that are not referenced by a shortcode), you can manually declare them in the resources key under the publishing format:\n---\ntitle: Example resource inclusion\nformat:\n  html:\n    resources:\n    - path/to/file.pdf\n    - path/to/audio.mp3\n---\nIf using a Quarto project with a _quarto.yml file, it is better practice to declare all assets in an assets directory under the resources key. For example, we have in our documentation website’s _quarto.yml file:\nproject:\n  type: website\n  resources:\n   - assets/*\n\n\n\n\n\n\nNote\n\n\n\nThe asterisks, *, means to include all files within that directory.",
+    "crumbs": [
+      "Support",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "qembedio-faq.html#what-happens-when-an-embedded-file-is-missing",
+    "href": "qembedio-faq.html#what-happens-when-an-embedded-file-is-missing",
+    "title": "Frequently Asked Questions",
+    "section": "What happens when an embedded file is missing?",
+    "text": "What happens when an embedded file is missing?\nIf a shortcode has no file path, or its file doesn’t exist, embedio prints a warning during the render that names the shortcode and the path. In HTML output, a box saying “File not found” with the path takes the place of the embed, and the rest of the page renders as usual. Other formats don’t show embeds, so nothing appears there.\nPaths are checked relative to the document, or to the project for a path that starts with /. URLs aren’t checked. A file that Quarto renders in the same project, such as slides.html from slides.qmd, counts as present.",
     "crumbs": [
       "Support",
       "FAQ"
@@ -276,7 +309,7 @@
     "href": "qembedio-embed-pdf.html#options",
     "title": "Embed PDF",
     "section": "Options",
-    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input PDF file path.\n\n\nheight\n“850px”\nSpecifies the height of the embedded PDF object.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded PDF object.\n\n\ndownload-link\n“true”\nAdd a link to download the embedded PDF in a new browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
+    "text": "Options\n\n\n\n\n\n\n\n\nKeyword Argument\nDefault Value\nDescription\n\n\n\n\nfile\nNone\nSpecifies the input PDF file path.\n\n\nheight\n“600px”\nSpecifies the height of the embedded PDF object.\n\n\nwidth\n“100%”\nSpecifies the width of the embedded PDF object.\n\n\ndownload-link\n“true”\nAdd a link to download the embedded PDF in a new browser window.\n\n\n\nYou may also omit specifying a file option. We’ll automatically use the first parameter as the file\n\n\n\n\n\n\nTip\n\n\n\nHaving trouble with files not appearing in the rendered output? See the troubleshooting section of the FAQ.",
     "crumbs": [
       "Shortcodes",
       "PDF"
