@@ -45,3 +45,9 @@ To report a bug, please [add an issue](https://github.com/coatless-quarto/embedi
 
 Want to contribute a feature? Please open an issue ticket to discuss the feature before sending a pull request. 
 
+## Learn more
+
+- [Documentation](https://quarto.thecoatlessprofessor.com/embedio/)
+- [Release notes](https://quarto.thecoatlessprofessor.com/embedio/qembedio-release-notes.html)
+- [Blog posts](https://blog.thecoatlessprofessor.com/projects/embedio/)
+- Discuss on [Mastodon](https://mastodon.social/@coatless/112317648975912833), [Bluesky](https://bsky.app/profile/coatless.bsky.social/post/3kqr3xllgmu2o) or [X](https://x.com/axiomsofxyz/status/1782564050842566957)
