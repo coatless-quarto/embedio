@@ -51,3 +51,7 @@ Want to contribute a feature? Please open an issue ticket to discuss the feature
 - [Release notes](https://quarto.thecoatlessprofessor.com/embedio/qembedio-release-notes.html)
 - [Blog posts](https://blog.thecoatlessprofessor.com/projects/embedio/)
 - Discuss on [Mastodon](https://mastodon.social/@coatless/112317648975912833), [Bluesky](https://bsky.app/profile/coatless.bsky.social/post/3kqr3xllgmu2o) or [X](https://x.com/axiomsofxyz/status/1782564050842566957)
+
+## License
+
+embedio is licensed under AGPL-3.0-or-later with an exception: what you write and render with embedio stays yours, along with the output, under any terms you like. See [LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md).
