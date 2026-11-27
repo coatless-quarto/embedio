@@ -1,0 +1,7 @@
+---
+title: "embedio: file names and classes with characters HTML must escape"
+---
+
+{{< pdf "assets/notes—draft & 'v2'.pdf" >}}
+
+{{< html assets/page.html class='wide" onload="alert(1)' >}}
