@@ -8,7 +8,7 @@ format:
     toc: true
 ---
 
-# 0.0.2-dev.1: ???? (??-??-????)
+# 0.0.2: Still Fits (11-26-2026)
 
 ## Breaking changes
 
