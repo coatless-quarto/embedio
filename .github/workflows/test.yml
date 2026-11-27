@@ -1,0 +1,13 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"  # weekly, to catch Quarto pre-release changes
+  workflow_dispatch:
+
+jobs:
+  test:
+    uses: coatless-quarto/.github/.github/workflows/extension-tests.yml@v1

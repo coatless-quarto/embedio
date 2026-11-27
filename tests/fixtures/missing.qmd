@@ -1,0 +1,11 @@
+---
+title: "embedio: a missing file and a missing path"
+---
+
+Before.
+
+{{< pdf assets/nowhere.pdf >}}
+
+{{< html >}}
+
+After.

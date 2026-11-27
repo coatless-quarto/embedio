@@ -1,0 +1,5 @@
+---
+title: "embedio: an embedded audio file in a website"
+---
+
+{{< audio assets/theme.mp3 >}}

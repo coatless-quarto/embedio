@@ -1,0 +1,19 @@
+---
+title: "embedio: every shortcode, with and without options"
+---
+
+{{< html assets/page.html >}}
+
+{{< html file="assets/page.html" height="300px" width="50%" full-screen-link="false" class="framed" >}}
+
+{{< revealjs assets/slides.html >}}
+
+{{< revealjs file="assets/slides.html" >}}
+
+{{< pdf assets/doc.pdf >}}
+
+{{< pdf file="assets/doc.pdf" height="400px" width="80%" download-link="false" >}}
+
+{{< audio assets/clip.mp3 >}}
+
+{{< audio file="assets/recording" caption="A recording" class="podcast" download-link="true" >}}
